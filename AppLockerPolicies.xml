@@ -30,7 +30,7 @@
     </FilePathRule>
     <FilePathRule Id="3e110d28-dbde-47f7-b0ae-c44b52b11b38" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local (Change path to your username)" Description="--- Always remember to change it back to Deny after finishing.&#xA;---&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
-        <FilePathCondition Path="C:\Users\saril\AppData\Local\Temp\*" />
+        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Temp\*" />
       </Conditions>
       <Exceptions>
         <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
@@ -98,7 +98,7 @@
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
         <FilePathCondition Path="C:\Program Files\PowerShell\*" />
         <FilePathCondition Path="C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe\*" />
-        <FilePathCondition Path="C:\Users\saril\AppData\Local\Microsoft\WindowsApps\*" />
+        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Microsoft\WindowsApps\*" />
       </Exceptions>
     </FilePublisherRule>
     <FilePublisherRule Id="d32cc361-8151-41bb-9042-d150851d9d3a" Name="---- Starter Rules: Block Process Hacker Publisher" Description="Legitimate software but sometimes used and abused by malware." UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -138,7 +138,7 @@
     </FilePathRule>
     <FilePathRule Id="602bf8c2-2a4f-4009-8cae-94894c9f05ef" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
-        <FilePathCondition Path="C:\Users\saril\AppData\Local\Temp\*" />
+        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Temp\*" />
       </Conditions>
       <Exceptions>
         <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
@@ -218,7 +218,7 @@
     </FilePathRule>
     <FilePathRule Id="7db12d15-41b3-42b3-ae96-1e2288db9374" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local (Change path to your username)" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
-        <FilePathCondition Path="C:\Users\saril\AppData\Local\Temp\*" />
+        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Temp\*" />
       </Conditions>
       <Exceptions>
         <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
