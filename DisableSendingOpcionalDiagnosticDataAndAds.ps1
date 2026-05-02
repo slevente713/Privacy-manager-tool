@@ -99,3 +99,4 @@ if (-not (Test-Path $registryPath2)) {
 New-ItemProperty -Path $registryPath2 -Name "HarvestContacts" -Value 0 -PropertyType DWord -Force | Out-Null
 
 Write-Host "Custom Inking and Typing Dictionary has been successfully disabled. Az egyéni kézírási és gépelési szótár sikeresen letiltva." -ForegroundColor White
+Write-Host "We're done! (Restart not required). Kész vagyunk! (Újrtaindítás nem szügséges)." -ForegroundColor White
