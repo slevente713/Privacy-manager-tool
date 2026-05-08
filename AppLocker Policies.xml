@@ -1,5 +1,5 @@
 <AppLockerPolicy Version="1">
-  <RuleCollection Type="Appx" EnforcementMode="AuditOnly">
+  <RuleCollection Type="Appx" EnforcementMode="Enabled">
     <FilePublisherRule Id="a9e18c21-ff8f-43cf-b9fc-db40eed693ba" Name="(Default Rule) All signed packaged apps" Description="Allows members of the Everyone group to run packaged apps that are signed." UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
@@ -8,7 +8,14 @@
       </Conditions>
     </FilePublisherRule>
   </RuleCollection>
-  <RuleCollection Type="Dll" EnforcementMode="AuditOnly">
+  <RuleCollection Type="Dll" EnforcementMode="Enabled">
+    <FilePublisherRule Id="a2b2ecb6-03e1-4606-9553-59118ac27a5a" Name="Allow All Signed DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="0.0.0.0" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+    </FilePublisherRule>
     <FilePathRule Id="3e110d28-dbde-47f7-b0ae-c44b52b11b38" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local (Change path to your username)" Description="--- Always remember to change it back to Deny after finishing.&#xA;---&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
         <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Temp\*" />
@@ -24,32 +31,277 @@
         <FilePathCondition Path="%WINDIR%\*" />
       </Conditions>
     </FilePathRule>
-    <FilePublisherRule Id="a2b2ecb6-03e1-4606-9553-59118ac27a5a" Name="Allow All Signed DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FileHashRule Id="1c1f9c30-678b-43f4-9af5-18fd959014a0" Name="Enable Xtremeshell" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
-          <BinaryVersionRange LowSection="0.0.0.0" HighSection="*" />
-        </FilePublisherCondition>
-      </Conditions>
-      <Exceptions>
         <FileHashCondition>
-          <FileHash Type="SHA256" Data="0xC23BF7156F72146D27C04F0E5FB5527C9CEB73E454891B6E8E388A13B31D07E7" SourceFileName="7z.dll" SourceFileLength="1908736" />
-          <FileHash Type="SHA256" Data="0x210EDBE8E198EC0030563CB43650B865212C4A30F4118059A28D1EC0205D50D3" SourceFileName="7-zip.dll" SourceFileLength="101888" />
-          <FileHash Type="SHA256" Data="0xCB74A14A30C4AE47B74541E27AF4C6701C07EC4EE235D1CF1D5913F946E635FD" SourceFileName="7-zip32.dll" SourceFileLength="67584" />
+          <FileHash Type="SHA256" Data="0x6ADA19EB3448CA0EB31DFC3705EEACD2F51097F4552231CE38816A3E5C94C0C9" SourceFileName="Accessibility.dll" SourceFileLength="21256" />
+          <FileHash Type="SHA256" Data="0x0AA9C0D5AF812304B036579FEDE61090F0F6170E26110F54F5E60DDBE02975B2" SourceFileName="clretwrc.dll" SourceFileLength="311056" />
+          <FileHash Type="SHA256" Data="0x463C2EA741915ACCAA7DA6ED2390049594FF1CF5B423257AF75B4725CA434D82" SourceFileName="clrgc.dll" SourceFileLength="669448" />
+          <FileHash Type="SHA256" Data="0x8D56A6B9CD92421D2F1AE0AA8CB9FDB62C893AA370A8584934EAB174332C9FF7" SourceFileName="clrjit.dll" SourceFileLength="1785608" />
+          <FileHash Type="SHA256" Data="0xBA1EB91B6C7145C7FE7F9384689F5E5A07B0F7563C1A4576DCF00A5D56CEC636" SourceFileName="coreclr.dll" SourceFileLength="4999432" />
+          <FileHash Type="SHA256" Data="0xAD54A4508B001434BFA899789A09CF95719CD3A29E7BB945321E9B0E17899E16" SourceFileName="D3DCompiler_47_cor3.dll" SourceFileLength="4916840" />
+          <FileHash Type="SHA256" Data="0x5CD6394F80BC5DDE940AA7CE6A39CEF9EB011E1EC7E514F7643D78A6C8FA82AD" SourceFileName="DirectWriteForwarder.dll" SourceFileLength="502056" />
+          <FileHash Type="SHA256" Data="0x231559F11311D7F00E0EE9FB1A739D9D05285390A633286F99EBECD353AFDC33" SourceFileName="hostfxr.dll" SourceFileLength="349448" />
+          <FileHash Type="SHA256" Data="0x870173A7F057A8517DCD28B5D6D8E77BD9D3667C3DB80C87B72E157E4B8329C2" SourceFileName="hostpolicy.dll" SourceFileLength="391432" />
+          <FileHash Type="SHA256" Data="0x430774AFC10C6CDD7036C2E8F629FA3A68835A56A4AD0DCAF6DDA0CDBBDBE2CC" SourceFileName="Microsoft.CSharp.dll" SourceFileLength="1005840" />
+          <FileHash Type="SHA256" Data="0xA1B45EA36F6BDE38CAFDCBB786FDF063DE1C0E85E482F6E9E597277846080D36" SourceFileName="Microsoft.DiaSymReader.Native.amd64.dll" SourceFileLength="2195504" />
+          <FileHash Type="SHA256" Data="0x58C3E899E7D1D7DB59F5A541882F37382AE9133A7A6EA91110857CA68F5478F7" SourceFileName="Microsoft.VisualBasic.Core.dll" SourceFileLength="1247504" />
+          <FileHash Type="SHA256" Data="0xE531112AFB61357C0418363F730C3318D0BCAD81EB8E58F876CE0ADA4B53D567" SourceFileName="Microsoft.VisualBasic.dll" SourceFileLength="19240" />
+          <FileHash Type="SHA256" Data="0xB528689D376AD0E0A657150BD4E7F275CBF0173E7F494DE170EA4FF966CA8482" SourceFileName="Microsoft.VisualBasic.Forms.dll" SourceFileLength="248104" />
+          <FileHash Type="SHA256" Data="0x341B6643D770FF4E6F7E22677FD0D3E9FB998C1EA24B2D209723227FEE4F1521" SourceFileName="Microsoft.Win32.Primitives.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0x43F35782B672DEFF02359C687E66BF127EACCFF0722AF6FE64D4433450406910" SourceFileName="Microsoft.Win32.Registry.AccessControl.dll" SourceFileLength="35112" />
+          <FileHash Type="SHA256" Data="0x9D988538DCEDF463650E8AE20879E90969CA914928559BC4D793487A7FA5E89C" SourceFileName="Microsoft.Win32.Registry.dll" SourceFileLength="121096" />
+          <FileHash Type="SHA256" Data="0x17F90EDF1E803CB57948CFA88CAC8192C1350A51F436B51FC15B4F5B37BCC7C0" SourceFileName="Microsoft.Win32.SystemEvents.dll" SourceFileLength="96520" />
+          <FileHash Type="SHA256" Data="0xE992EA65CE42ECD39E55FEB1174B14F494A244760FC1666CF387AF03DF8B6088" SourceFileName="Microsoft.Windows.SDK.NET.dll" SourceFileLength="24877600" />
+          <FileHash Type="SHA256" Data="0x3D3E2DCB232FB5DF6503C4D3EC57BD1B6202718E2D2BEAF636A7F0763B9BDF20" SourceFileName="mscordaccore.dll" SourceFileLength="1343512" />
+          <FileHash Type="SHA256" Data="0x950BB2F164FAA6EAF9B2E57D60AFD721C2587AC0D1410CEFEDD0B954EBFB2B76" SourceFileName="mscordbi.dll" SourceFileLength="1235496" />
+          <FileHash Type="SHA256" Data="0xE2C0F62B5C6DFC59890D805D6321D63E3AFAF0AEBC8629E184CEE4112F7A04D8" SourceFileName="mscorlib.dll" SourceFileLength="59656" />
+          <FileHash Type="SHA256" Data="0x77D329E2195138DDC6D5F515F6D7B877729A89520B364138558213FA076641E1" SourceFileName="mscorrc.dll" SourceFileLength="136992" />
+          <FileHash Type="SHA256" Data="0xEAED83E2F33F23AC958F9513F3B59908C36522C03591494CCB32C2F74BD7762F" SourceFileName="msquic.dll" SourceFileLength="529480" />
+          <FileHash Type="SHA256" Data="0x9B37059467556F45C4E6C7C56C54C098C8811D54B0810BFBB25D4918EECED8DB" SourceFileName="netstandard.dll" SourceFileLength="101136" />
+          <FileHash Type="SHA256" Data="0x2B3C654172D08C95C8EAF5F13C82BD57C457E632B91B1F98AF243EE032D21FC2" SourceFileName="PenImc_cor3.dll" SourceFileLength="158472" />
+          <FileHash Type="SHA256" Data="0x8236F3C3F292FB370C2A4899E4A4C6CC92B8D853A10D9C366C91667A5E803C29" SourceFileName="PresentationCore.dll" SourceFileLength="8542504" />
+          <FileHash Type="SHA256" Data="0x11B1D04FF5AE7A65F923D33F17167BDA6CCE80A7D7F7A63342AEA369BCAF07BC" SourceFileName="PresentationFramework.Aero.dll" SourceFileLength="444712" />
+          <FileHash Type="SHA256" Data="0x4D2C17B871731670C5FAB897A366338259D6351900380605C8A0FAAAD7D1B3BD" SourceFileName="PresentationFramework.Aero2.dll" SourceFileLength="448776" />
+          <FileHash Type="SHA256" Data="0x404CD154EDB12EDF38E915B2088722EF65EFFCE0418FD1566BF4996604DC0A2E" SourceFileName="PresentationFramework.AeroLite.dll" SourceFileLength="239912" />
+          <FileHash Type="SHA256" Data="0x47F550D58E4C3D2FBE31483AAE056FD4A55B8BC34071DC850D724D84FD7AEDDE" SourceFileName="PresentationFramework.Classic.dll" SourceFileLength="272680" />
+          <FileHash Type="SHA256" Data="0x65A9C00D8810D6189E75879A3CFEDCD21DE7EF116802A7DA787BDB432DE51CE2" SourceFileName="PresentationFramework.dll" SourceFileLength="16128264" />
+          <FileHash Type="SHA256" Data="0x5FB17547B0FC251F4A69EE5CBB255E69934C4C146800D1A1F1B3BB939531EE29" SourceFileName="PresentationFramework.Luna.dll" SourceFileLength="669968" />
+          <FileHash Type="SHA256" Data="0xC670FD882AAF1AA40595AEAD5531DFAA0D4C638B56AAEC777F5F2FD067C4EF38" SourceFileName="PresentationFramework.Royale.dll" SourceFileLength="334088" />
+          <FileHash Type="SHA256" Data="0x24BE88DCEA2DD615E734329465E0D9DB079E71B147A66DC1EB083A950660D001" SourceFileName="PresentationFramework-SystemCore.dll" SourceFileLength="39184" />
+          <FileHash Type="SHA256" Data="0xC7167CDA1FB2E44BF14DB5621286C3D3AB2711634B999659683856374C613FEA" SourceFileName="PresentationFramework-SystemData.dll" SourceFileLength="35112" />
+          <FileHash Type="SHA256" Data="0x6CD24025461DDC38A840E9AEBE967136C350B2EEB759852A32EB6BBD8434B152" SourceFileName="PresentationFramework-SystemDrawing.dll" SourceFileLength="35112" />
+          <FileHash Type="SHA256" Data="0xD949C6DBB5B3CC2F72FC4FF02150489A3EA35C08F9A567D87765B7BB5C519A1B" SourceFileName="PresentationFramework-SystemXml.dll" SourceFileLength="35112" />
+          <FileHash Type="SHA256" Data="0x8E34DDACF87AA2AAE6AB25CA97B66B9AD7D71CA48A6F566B6A5C8C5091E5260E" SourceFileName="PresentationFramework-SystemXmlLinq.dll" SourceFileLength="31016" />
+          <FileHash Type="SHA256" Data="0xAABB2078EB634A4FA3C8073A4A3208016E98FF911522147A997D00725F348218" SourceFileName="PresentationNative_cor3.dll" SourceFileLength="1236248" />
+          <FileHash Type="SHA256" Data="0x73374FD088AF4B5652D27D69AE6C8920A4D3CB65785DE2DAD94AA64399AFB388" SourceFileName="PresentationUI.dll" SourceFileLength="1288488" />
+          <FileHash Type="SHA256" Data="0xE296CFF42DB9BF01DDE3B707D5F4D7A290751461C892010F14FD4EE3AF9C97C4" SourceFileName="ReachFramework.dll" SourceFileLength="1603880" />
+          <FileHash Type="SHA256" Data="0xB5291411814599594B7A6CA2BF6E313D2E101CED8D78216594CE4E267C830C31" SourceFileName="System.AppContext.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0x96ACC500D3050156F0A213017C42064ECCFEC84065C41D2B9DFE743F1204E71D" SourceFileName="System.Buffers.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0xD5F0C567CFBDC93878F7ECCEAE46216BA31408C61279808E31F01849BA0B33F4" SourceFileName="System.CodeDom.dll" SourceFileLength="183560" />
+          <FileHash Type="SHA256" Data="0xD90EBB0390AC9276F40B6FDB602337ADECBC480E505F223936202A2FA93B53AD" SourceFileName="System.Collections.Concurrent.dll" SourceFileLength="276744" />
+          <FileHash Type="SHA256" Data="0x787BEE130A005FEB99521CA313DFBFFA2658D540D37FDC7224ED52836BF4D04F" SourceFileName="System.Collections.dll" SourceFileLength="260392" />
+          <FileHash Type="SHA256" Data="0x58B68291305A1B3C815487953468CC4844EA5F52E20401AAC1A9815F243FE92B" SourceFileName="System.Collections.Immutable.dll" SourceFileLength="837896" />
+          <FileHash Type="SHA256" Data="0x68AD0738D448D82BA86EB5C8F9EF946627D1B29F799305471441816AF2BA7E74" SourceFileName="System.Collections.NonGeneric.dll" SourceFileLength="104712" />
+          <FileHash Type="SHA256" Data="0xD414BC3490B40E14CF2B46F1401A79A5D5E82AF326C940A1FC3715AA17E497DE" SourceFileName="System.Collections.Specialized.dll" SourceFileLength="104744" />
+          <FileHash Type="SHA256" Data="0xBE02D283F55EBA65452E1810972ADCCB322E26C42BE7040993A740C95D4D3999" SourceFileName="System.ComponentModel.Annotations.dll" SourceFileLength="203016" />
+          <FileHash Type="SHA256" Data="0x019DC5B14B147FB9B31B7B84E215662C73C4BD30E7D5A4E6954B226D8E7B636C" SourceFileName="System.ComponentModel.DataAnnotations.dll" SourceFileLength="17160" />
+          <FileHash Type="SHA256" Data="0x55B3BA1EBA8363D13DEA0F55C1C1C7722A01DA59AC22AC678E1D8B9E4B8C9520" SourceFileName="System.ComponentModel.dll" SourceFileLength="30984" />
+          <FileHash Type="SHA256" Data="0x420E4618787E2AC1F240B2606A5DA07F1EE65FCE562C4D5CC7BC8F4DC9BE4729" SourceFileName="System.ComponentModel.EventBasedAsync.dll" SourceFileLength="47376" />
+          <FileHash Type="SHA256" Data="0x3ED8DB04FD6C2E67A7A4ADE6C510968760B344EDDAAD7E4347AA307423DF6C9A" SourceFileName="System.ComponentModel.Primitives.dll" SourceFileLength="80136" />
+          <FileHash Type="SHA256" Data="0x8A280B2017390F62ECBC18F61DAFEE9011B834C4CADC4E522B1D60C675DEA62B" SourceFileName="System.ComponentModel.TypeConverter.dll" SourceFileLength="747816" />
+          <FileHash Type="SHA256" Data="0x87A74E09DCA90FA9EE5C286EDADA7D2E22596B9CBF6937CC4F22CB66CA467038" SourceFileName="System.Configuration.ConfigurationManager.dll" SourceFileLength="1075464" />
+          <FileHash Type="SHA256" Data="0x4CC787A43D0E09FC7B058C33BDAF0C55F518FA28E49E7BC8236FFBDD9D16CDDA" SourceFileName="System.Configuration.dll" SourceFileLength="19728" />
+          <FileHash Type="SHA256" Data="0x557AA1126DE838497AFECC3D156D3610FD363422929C8EE301FE897D51D2ED87" SourceFileName="System.Console.dll" SourceFileLength="174376" />
+          <FileHash Type="SHA256" Data="0xA99E3865F25B977E3910AD2FB3D39EC180F88937D4BE3610A8290355BCAD2554" SourceFileName="System.Core.dll" SourceFileLength="23824" />
+          <FileHash Type="SHA256" Data="0x38D84750DE719829DEEFA0DF6C553B2B0B278E06D205265BCF721F1E4ACDD135" SourceFileName="System.Data.Common.dll" SourceFileLength="2861328" />
+          <FileHash Type="SHA256" Data="0xD6EE383E2806E4742C4B355C49C3C61E5BDCE01D24107335A7F1AD1F5430A4B5" SourceFileName="System.Data.DataSetExtensions.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0x250097B950CFF1C4B32540C50EA5E14478E6040587A5221A3297742FD8A9D135" SourceFileName="System.Data.dll" SourceFileLength="25352" />
+          <FileHash Type="SHA256" Data="0x0F50532A9058F229CA3D885F5EA46D85259D33D15073D1C60764D81AB968981B" SourceFileName="System.Design.dll" SourceFileLength="22312" />
+          <FileHash Type="SHA256" Data="0xB3646695FD296B2E913F7C75A2F63A09758F2E7B3D89B7A67BB574BE7D2ED9F4" SourceFileName="System.Diagnostics.Contracts.dll" SourceFileLength="16648" />
+          <FileHash Type="SHA256" Data="0xA142FAB950019A2911572061A03FCE083868E1F67265FA19FC64C92B5FD2113F" SourceFileName="System.Diagnostics.Debug.dll" SourceFileLength="16144" />
+          <FileHash Type="SHA256" Data="0xA63ECB63C2BD168416648B86EBC38F996A639C7C34257E373ABF9E5A19CD88EE" SourceFileName="System.Diagnostics.DiagnosticSource.dll" SourceFileLength="416016" />
+          <FileHash Type="SHA256" Data="0xB40D700707FB041E3E03C7BC17D995635DFE9B3EA531481587E79DBC00468FC0" SourceFileName="System.Diagnostics.EventLog.dll" SourceFileLength="387336" />
+          <FileHash Type="SHA256" Data="0x9579E54C9F2CB47918B700E2FE4459C010A49828649984A4BDAA69DA5A8F945B" SourceFileName="System.Diagnostics.EventLog.Messages.dll" SourceFileLength="801064" />
+          <FileHash Type="SHA256" Data="0xFCFD54704E0AE2C4811BAD6935703BB6AB9F1BA969D60F28DE231094F4AFC0DC" SourceFileName="System.Diagnostics.FileVersionInfo.dll" SourceFileLength="47376" />
+          <FileHash Type="SHA256" Data="0x82516E2D4B92652C721423DF1D2BD6EE96BC1ED00E86480E17B2C6FF082A9D11" SourceFileName="System.Diagnostics.PerformanceCounter.dll" SourceFileLength="289040" />
+          <FileHash Type="SHA256" Data="0xEE8BAF0F4CA0C80E0D4D7B8D5331BF0830923B4EB23CB8861039A883D1A353C3" SourceFileName="System.Diagnostics.Process.dll" SourceFileLength="338216" />
+          <FileHash Type="SHA256" Data="0x59E400642B9563E7B6C9C59A03055B5D595940FD5D4DEF5551FE63742E6DEA7B" SourceFileName="System.Diagnostics.StackTrace.dll" SourceFileLength="47368" />
+          <FileHash Type="SHA256" Data="0x20493679DE433D72AFFE54C5A3C0FFC31D853F2950343094CE0F2E7EE0261DA2" SourceFileName="System.Diagnostics.TextWriterTraceListener.dll" SourceFileLength="67848" />
+          <FileHash Type="SHA256" Data="0xEAA73977CE1019E7548808272BBDA1808E46D01E3AB9B3DFED3D268F6F27EBBF" SourceFileName="System.Diagnostics.Tools.dll" SourceFileLength="15632" />
+          <FileHash Type="SHA256" Data="0x0B1F0FC36BCFD0717E67C545357B99630CE3640D9AE0BBF58FD00DB4295AC2E8" SourceFileName="System.Diagnostics.TraceSource.dll" SourceFileLength="145680" />
+          <FileHash Type="SHA256" Data="0x9A7BC1AB63E10755A8D7652B807936EF7E09AE77372F3D51CA0C52D1B66B6846" SourceFileName="System.Diagnostics.Tracing.dll" SourceFileLength="16648" />
+          <FileHash Type="SHA256" Data="0x9C3F8F7D78A06DA9E40F16AAAECB73D23DD3C272F81F05D535482A1FF83EFC6E" SourceFileName="System.DirectoryServices.dll" SourceFileLength="1046792" />
+          <FileHash Type="SHA256" Data="0x92E5E63F967C4CE9F8B45E9406AD8CA72E538760DE13089468D5044019120CE7" SourceFileName="System.dll" SourceFileLength="50440" />
+          <FileHash Type="SHA256" Data="0xE26DCC3E4A495AA2CB582D36E7DC86C701C91E74DA042DFCC720A53969BACFDF" SourceFileName="System.Drawing.Common.dll" SourceFileLength="1530152" />
+          <FileHash Type="SHA256" Data="0x5931E87E7FB3D4B90564EF344931B523EA438E77446352FB3F2180735FC942C0" SourceFileName="System.Drawing.Design.dll" SourceFileLength="15656" />
+          <FileHash Type="SHA256" Data="0x66DCADDA43F66FF74046C019EAC0D9920655C3197A81E2917DA350C1AA303E6D" SourceFileName="System.Drawing.dll" SourceFileLength="21768" />
+          <FileHash Type="SHA256" Data="0x523958C17F57FA08C875EBEE0404AE3501B6838C9B1FEF560C6166FE72FA8C10" SourceFileName="System.Drawing.Primitives.dll" SourceFileLength="133384" />
+          <FileHash Type="SHA256" Data="0x5E87416A874679037AC90C5AA8B4BF570E96C05610552606F33083FE146B77A5" SourceFileName="System.Dynamic.Runtime.dll" SourceFileLength="16680" />
+          <FileHash Type="SHA256" Data="0x4B969B6551A8E81BEE515DB8BA6914ED1048F0F27A0AB9B0B4D229424223B431" SourceFileName="System.Formats.Asn1.dll" SourceFileLength="243984" />
+          <FileHash Type="SHA256" Data="0x7E55CBD926DC0C3B0FE10569148631DCAA869E74050617F154818970CA5F4AA1" SourceFileName="System.Formats.Tar.dll" SourceFileLength="272672" />
+          <FileHash Type="SHA256" Data="0x329927DEF08544F4353446D52D856536083048AD82B5FA81EDB337C4F4445A4C" SourceFileName="System.Globalization.Calendars.dll" SourceFileLength="16144" />
+          <FileHash Type="SHA256" Data="0xECF8AD6CD49A98CA8ABFED4D22D487EF16179E5714BC10F0EBC302E76D1163B0" SourceFileName="System.Globalization.dll" SourceFileLength="16144" />
+          <FileHash Type="SHA256" Data="0x51491CF6986F03D55489A831C0354E0BFC55767EE6C23177ACB3EDD1481003A1" SourceFileName="System.Globalization.Extensions.dll" SourceFileLength="15632" />
+          <FileHash Type="SHA256" Data="0xF06AFFBE308E5F4EF3B2D9197E86404F10852575108861A4FAFFF2216DC7AF46" SourceFileName="System.IO.Compression.Brotli.dll" SourceFileLength="84264" />
+          <FileHash Type="SHA256" Data="0x55CC2BFAA08C747B691EB9971D8595361835F664479F709F4C62416F1368B8BF" SourceFileName="System.IO.Compression.dll" SourceFileLength="264464" />
+          <FileHash Type="SHA256" Data="0x548EF21630BCD878218B0C29A6D8021209CD0D1181260B36DDE50CF7EA68999E" SourceFileName="System.IO.Compression.FileSystem.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0x2D0D9709E33AE449BBDF04D17D94BCE02BFAC35D2B5C53BD91170FDE4C5E53C0" SourceFileName="System.IO.Compression.Native.dll" SourceFileLength="832272" />
+          <FileHash Type="SHA256" Data="0x387E69C5D57940D3336E2EF6A5807971A353AC700CB12ABAF223391238B3B234" SourceFileName="System.IO.Compression.ZipFile.dll" SourceFileLength="55592" />
+          <FileHash Type="SHA256" Data="0x0BA3F93A269CB39A61EA000563201D7044D9C736ABE61F3E4EC3CCC26F1D96EF" SourceFileName="System.IO.dll" SourceFileLength="16168" />
+          <FileHash Type="SHA256" Data="0x8ADD89393B39BF661AC26F6A94DF0F11AFC24612CACCD09D15BAD4FD8B8C58E2" SourceFileName="System.IO.FileSystem.AccessControl.dll" SourceFileLength="104712" />
+          <FileHash Type="SHA256" Data="0x14551AEC18DDD77C88B0332A2E78DA924292229119737F187E89E7A72D1C3C9D" SourceFileName="System.IO.FileSystem.dll" SourceFileLength="16144" />
+          <FileHash Type="SHA256" Data="0x28DD6451DFC2E9A78863B1FC90E8D84487A019D12D6E0A159DB94C2AA3E3DEFD" SourceFileName="System.IO.FileSystem.DriveInfo.dll" SourceFileLength="55560" />
+          <FileHash Type="SHA256" Data="0x7A354D652028A2AFB059FFFBC11A440CDF1A96496DA191E8D65BA510FBD0F08F" SourceFileName="System.IO.FileSystem.Primitives.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0xDC7DBAC1AB3CBA84CC7FE245D76EEC0017CA161723088B67E45F8D4268402C0C" SourceFileName="System.IO.FileSystem.Watcher.dll" SourceFileLength="88328" />
+          <FileHash Type="SHA256" Data="0x746FA4890AACB028A43D341177BA14A4AE4BCE265756FAEE8DFFC42664FC11B1" SourceFileName="System.IO.IsolatedStorage.dll" SourceFileLength="92456" />
+          <FileHash Type="SHA256" Data="0xC12CB3A6159748F66A61BB12C16325A35AD3DF55555051D07C7648B410F068E4" SourceFileName="System.IO.MemoryMappedFiles.dll" SourceFileLength="84240" />
+          <FileHash Type="SHA256" Data="0x375E7E54E56DB8B6233E1B4B576F5CF34B97E454050CAD77F4B7E1B742D6E763" SourceFileName="System.IO.Packaging.dll" SourceFileLength="293136" />
+          <FileHash Type="SHA256" Data="0x068DF99293335AFCB91E3B2AF07A9BBCD64AAA88D7252C90474ED06E77CBF556" SourceFileName="System.IO.Pipes.AccessControl.dll" SourceFileLength="16648" />
+          <FileHash Type="SHA256" Data="0x3026D57927BE96E1CF46933B060F79B35EF3C0969B60476BBDDB2F82AE80FB2A" SourceFileName="System.IO.Pipes.dll" SourceFileLength="166160" />
+          <FileHash Type="SHA256" Data="0x728C7B3C30CAEC4C8731FC5D98DDAF9E14A3D69928A50BDC3598DD1E3DACFA2B" SourceFileName="System.IO.UnmanagedMemoryStream.dll" SourceFileLength="15632" />
+          <FileHash Type="SHA256" Data="0x1D76BD258680FD7036271FBF96A91ADB6724F3A5941CD4EE4CA1B43E0C8E7B7D" SourceFileName="System.Linq.dll" SourceFileLength="542984" />
+          <FileHash Type="SHA256" Data="0xBFF75ED6CE07242123990A87E879B92F252D28BF409E182766C71AF9AC3C70C6" SourceFileName="System.Linq.Expressions.dll" SourceFileLength="3676456" />
+          <FileHash Type="SHA256" Data="0x00CCD349AC6C64AC4CC1AB1F93A989A0A98C3E154EF1EC8A5EFC91568249C4E4" SourceFileName="System.Linq.Parallel.dll" SourceFileLength="805128" />
+          <FileHash Type="SHA256" Data="0x15FC556E9156E4F7874D0C53FB799A88B92B88B5FA6491A08CE9E78AA1FD27FF" SourceFileName="System.Linq.Queryable.dll" SourceFileLength="174352" />
+          <FileHash Type="SHA256" Data="0x6645AD8B9A67C8BE67FFC872268E2CA1FED6DA7E74C829F712FF06AB5B6EEDC3" SourceFileName="System.Management.dll" SourceFileLength="312584" />
+          <FileHash Type="SHA256" Data="0x84F6A03167169CB73F43F03A15BC53892EEE08FA9D6316322E7F18DC81FF6983" SourceFileName="System.Memory.dll" SourceFileLength="157960" />
+          <FileHash Type="SHA256" Data="0x9B65BA2C3923D59CDD579D04EBDA2E4A22422EC28AE7CD31AD678393252B7108" SourceFileName="System.Net.dll" SourceFileLength="17672" />
+          <FileHash Type="SHA256" Data="0x99EB7701547C81D367A3B6660DC675505EC22CCBC2AEFAD8AAEA741BCF7DFF92" SourceFileName="System.Net.Http.dll" SourceFileLength="1730824" />
+          <FileHash Type="SHA256" Data="0x440EBDABE0E090CCCC9ACFFB0B7FDDC8761C1D9CD75D678AA5BFB7A6E59C627F" SourceFileName="System.Net.Http.Json.dll" SourceFileLength="129288" />
+          <FileHash Type="SHA256" Data="0x3F6A65EACBA2FBB522B4F67D4B4E486FD43974FDA552C58719A8FE3A6323F957" SourceFileName="System.Net.HttpListener.dll" SourceFileLength="551176" />
+          <FileHash Type="SHA256" Data="0x37D6B970E52278CD55B3E0FBD955A027321B12C1AE4FF6491992C6DCE6615EA3" SourceFileName="System.Net.Mail.dll" SourceFileLength="432400" />
+          <FileHash Type="SHA256" Data="0x1D1C8911F11D4EA853858B40DCF745427BBF6B463A29D1201B58D2BC97ADADFF" SourceFileName="System.Net.NameResolution.dll" SourceFileLength="112904" />
+          <FileHash Type="SHA256" Data="0xA8BBF38D167EE6B83C4A47606D866C398C64B00FCCECBB4420248A9B238E253A" SourceFileName="System.Net.NetworkInformation.dll" SourceFileLength="157960" />
+          <FileHash Type="SHA256" Data="0x201EEB542D71FEA10238757A055AEDE2A532CC6C58AB99D96D90977B4D7C90F3" SourceFileName="System.Net.Ping.dll" SourceFileLength="96520" />
+          <FileHash Type="SHA256" Data="0xEF15C639FB55CB728679973581F62550F0B17D52DE22C085048E196949F7D555" SourceFileName="System.Net.Primitives.dll" SourceFileLength="231696" />
+          <FileHash Type="SHA256" Data="0xED90874BDD8388D2B729FDE2FDC7858DD9BEF62A2E90A4BE8B896F3D81C7CB74" SourceFileName="System.Net.Quic.dll" SourceFileLength="284944" />
+          <FileHash Type="SHA256" Data="0x70E329B673E702584E87C3D14E15411DEE73A725CA4BA29D923B08094B944C38" SourceFileName="System.Net.Requests.dll" SourceFileLength="346408" />
+          <FileHash Type="SHA256" Data="0x8880A7737C85B94F27C76CDA867C9AB3673AF4FA18A4963E84AD6668005F0C42" SourceFileName="System.Net.Security.dll" SourceFileLength="669992" />
+          <FileHash Type="SHA256" Data="0x8D26CC142D3CCF3939C130E892EE6127AC18B27CD0898DDA844D5695A55F7DBD" SourceFileName="System.Net.ServicePoint.dll" SourceFileLength="47368" />
+          <FileHash Type="SHA256" Data="0xB0E71BF8C9F99BAA531FAED75BA6BD1BE25CF93DDB9DD2B3C24DF2A1AB3DFBE1" SourceFileName="System.Net.Sockets.dll" SourceFileLength="547080" />
+          <FileHash Type="SHA256" Data="0x61975718095FCFD1E25EF6138E628B571B7953D9F94F8C06C6F92F46D1FF050F" SourceFileName="System.Net.WebClient.dll" SourceFileLength="170248" />
+          <FileHash Type="SHA256" Data="0x9CA962EC7A6DE38A27492FEE703AF99F0A60991634776381E47EEFAF5171B96B" SourceFileName="System.Net.WebHeaderCollection.dll" SourceFileLength="67856" />
+          <FileHash Type="SHA256" Data="0xA868874080D6E3D43C33569F13DDF53510F0FFDF9F0B66856E9B64BF8350BD7A" SourceFileName="System.Net.WebProxy.dll" SourceFileLength="43272" />
+          <FileHash Type="SHA256" Data="0xD24D50742F5E68856BE6CF7FFDA09DE3ECA0BD72A505F6334245C49014634C3A" SourceFileName="System.Net.WebSockets.Client.dll" SourceFileLength="100616" />
+          <FileHash Type="SHA256" Data="0x1F541A38CBEA4D9451B4571048C041946E7281B43345ACA3D2419B14281E9249" SourceFileName="System.Net.WebSockets.dll" SourceFileLength="190728" />
+          <FileHash Type="SHA256" Data="0x962B505BB808A700989B8EC1C3FD121A4D8034AC5ED6A863DE5930DF0ECA4BDE" SourceFileName="System.Numerics.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0x65CC86DC623506AB9759809986D63DADDB49295A03F8AA5089514869A6F7083F" SourceFileName="System.Numerics.Vectors.dll" SourceFileLength="16144" />
+          <FileHash Type="SHA256" Data="0x794E5ED33ED56743BFB669FBEA831C6051157BE63A85C8FDE731A7986A12FDC6" SourceFileName="System.ObjectModel.dll" SourceFileLength="80144" />
+          <FileHash Type="SHA256" Data="0xD1A0A870F984AA4AF7D80488BD8FCBF4CEFC800A71960FCD8168C081B00DFE95" SourceFileName="System.Printing.dll" SourceFileLength="977192" />
+          <FileHash Type="SHA256" Data="0xC028A8C44E657A4A283FAF13684BD01116BC1B877ED166BEF58750C1AAE8179C" SourceFileName="System.Private.CoreLib.dll" SourceFileLength="13175048" />
+          <FileHash Type="SHA256" Data="0xB2598EC612A6A4D7E90BB10DD2B37498C3E4D9A4CE78F2CB696CEB0D0761D1E8" SourceFileName="System.Private.DataContractSerialization.dll" SourceFileLength="2083088" />
+          <FileHash Type="SHA256" Data="0x8889C720303719262CE58CDE8BF79C1FCD55AB41D41EBA9EEBAD25CDAC5B485C" SourceFileName="System.Private.Uri.dll" SourceFileLength="260360" />
+          <FileHash Type="SHA256" Data="0x026AA72D8E5703630364E30928C206D307568DA6132897B019DAB4B75F30289E" SourceFileName="System.Private.Xml.dll" SourceFileLength="7997704" />
+          <FileHash Type="SHA256" Data="0x364BB63390092C72A105F776674737CC7AFC3A065C652970D842FD269B1E404F" SourceFileName="System.Private.Xml.Linq.dll" SourceFileLength="403720" />
+          <FileHash Type="SHA256" Data="0x7A7EAF1AB263E8137CC3D749FB99A5DBE8CA338FF0423E16BC913EC39DABAD40" SourceFileName="System.Reflection.DispatchProxy.dll" SourceFileLength="76048" />
+          <FileHash Type="SHA256" Data="0x2812F6E0E99C1A1B99EE5F7588B616103462CBBA5875F6DD9EC3E4A0F7FE0DE9" SourceFileName="System.Reflection.dll" SourceFileLength="16648" />
+          <FileHash Type="SHA256" Data="0x3B8BDE1AF2A8E7847045D15DA08EDD4B67DE4CC2AF0132F6B0EC2200059B31EB" SourceFileName="System.Reflection.Emit.dll" SourceFileLength="129320" />
+          <FileHash Type="SHA256" Data="0xF7C47AEBA81A8C75D4513A4AE5CAF89BD71E3FFCE24F8460C644EA5C9017B5EC" SourceFileName="System.Reflection.Emit.ILGeneration.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0xFD307C465942FED772F1EFB792FC09A22C3EFB883C325578F6ACFCEA9E014057" SourceFileName="System.Reflection.Emit.Lightweight.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0x4F195E4491BB6596810FC43812C43D19A121CC1AF65BDDBAFD7B063763F5C574" SourceFileName="System.Reflection.Extensions.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0x90EF65E56AF4EA46E32DE8EE04DE4D4439DA5368FF1AA43B525738EB7D33677D" SourceFileName="System.Reflection.Metadata.dll" SourceFileLength="1116424" />
+          <FileHash Type="SHA256" Data="0xA639AB8B6768B7BBE47F938F908A4EFFF9B2DD417EDF64C00417BE1BEA962CC4" SourceFileName="System.Reflection.Primitives.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0x5BC35C61F6CC6994B2F656C6A93F55E87CCC3E1A0FB84725590817BEDA8B4753" SourceFileName="System.Reflection.TypeExtensions.dll" SourceFileLength="43272" />
+          <FileHash Type="SHA256" Data="0x776AC2ACFA7CEDFDAC5E2EAD8CF832785B38170660F8820948DABDBDF33A3579" SourceFileName="System.Resources.Extensions.dll" SourceFileLength="137488" />
+          <FileHash Type="SHA256" Data="0x5EE43136F60DD0C3379AE99450C01DB7EB7338BA2A2953A30B951170D90EC5A1" SourceFileName="System.Resources.Reader.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0xE1C905634FAD5FE718C2DB60C7E6260A63E6217DBC465162347CC2821F039FAF" SourceFileName="System.Resources.ResourceManager.dll" SourceFileLength="16144" />
+          <FileHash Type="SHA256" Data="0xEB3BF7D562931E7DE71FE18B290D13C1A1A2471E9EEE18E96F07496D994E18A1" SourceFileName="System.Resources.Writer.dll" SourceFileLength="51472" />
+          <FileHash Type="SHA256" Data="0x7F5F09F46D80FD45C6DE59D3BB4458FA72026134BBF694A025667F6C35A0C4B3" SourceFileName="System.Runtime.CompilerServices.Unsafe.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0xA3FEFB839B72F92642866CCC79CB1E687642017E39B21F0F266D1091F7A8B3A8" SourceFileName="System.Runtime.CompilerServices.VisualC.dll" SourceFileLength="30992" />
+          <FileHash Type="SHA256" Data="0xBBEC69AD9EA6E3BB1A96EF7F93F308B077031E73D82FB711E6B1154F4C504B34" SourceFileName="System.Runtime.dll" SourceFileLength="43784" />
+          <FileHash Type="SHA256" Data="0x1D33CDE5EEB1FFC5C07B9308D57AF825F1BED52E85A3D4B857396820181BFECC" SourceFileName="System.Runtime.Extensions.dll" SourceFileLength="18216" />
+          <FileHash Type="SHA256" Data="0xCCD5B1A2BBCC31EDFE55D39A017AE4B1DB77BBEAD47E129465042DCECC03F3BE" SourceFileName="System.Runtime.Handles.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0x810E4E8DEF0BFFF283103C77C36C2C4F3B65CB97C6EF2FA41FA5A4890C5EE6C4" SourceFileName="System.Runtime.InteropServices.dll" SourceFileLength="96520" />
+          <FileHash Type="SHA256" Data="0x19D307CB05A8D876348FC8AF57F290E68EB5A8A848EADA98DA0D39CC58012410" SourceFileName="System.Runtime.InteropServices.JavaScript.dll" SourceFileLength="51496" />
+          <FileHash Type="SHA256" Data="0xE72E020014AD4F367456D060135020C4A8BA17D99472EEBDFF4FC7B97C6CADE2" SourceFileName="System.Runtime.InteropServices.RuntimeInformation.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0x4A09FFB86A5EABB2CA8B00E128F354DA436452B18F4255B8914830EFC2785BE8" SourceFileName="System.Runtime.Intrinsics.dll" SourceFileLength="17160" />
+          <FileHash Type="SHA256" Data="0xCC0EB6C820F716F463492C5943290DE43165B703220A9DE25F4D1D68E08590F6" SourceFileName="System.Runtime.Loader.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0x6D28635CB02CF87CE744442F2FA61E75954F6E7E570423EC72DC96B2D1BD040A" SourceFileName="System.Runtime.Numerics.dll" SourceFileLength="330000" />
+          <FileHash Type="SHA256" Data="0xB1D1ABA67A4DA0A59615B09B1B7EB645FA0460232A4C723ED2B2393F67FA0F7C" SourceFileName="System.Runtime.Serialization.dll" SourceFileLength="17160" />
+          <FileHash Type="SHA256" Data="0x74C26211C6EA57A860F64657164151A2C2FEE92499504D164494EF58D7ABA772" SourceFileName="System.Runtime.Serialization.Formatters.dll" SourceFileLength="309512" />
+          <FileHash Type="SHA256" Data="0x89B3B4CD07496029005EA07CF9E4D20B0E6858729B3DB89E2045027808971591" SourceFileName="System.Runtime.Serialization.Json.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0xA0478F50337167F700562BFE0779FE613E0C829B373185E6F7CF571196FD685E" SourceFileName="System.Runtime.Serialization.Primitives.dll" SourceFileLength="39208" />
+          <FileHash Type="SHA256" Data="0x40DBCCE309B5ED322E129B66980299B7C25AD6249837AD093912D283FFD9A21F" SourceFileName="System.Runtime.Serialization.Xml.dll" SourceFileLength="17168" />
+          <FileHash Type="SHA256" Data="0xA20F8C30DD3EC0FE82B73EA653C921FEFA36DF0026621A9299BDB80BF9D48C0B" SourceFileName="System.Security.AccessControl.dll" SourceFileLength="231688" />
+          <FileHash Type="SHA256" Data="0x87AA388E83E0751A08AC30784A7FFDDF6649D419851F6145724DF2AB04AD019E" SourceFileName="System.Security.Claims.dll" SourceFileLength="100624" />
+          <FileHash Type="SHA256" Data="0x4D378EAB1D9E840B278E750ACB3D0EA4504FB79E63DDEA87B040EFFCBB862CFE" SourceFileName="System.Security.Cryptography.Algorithms.dll" SourceFileLength="17704" />
+          <FileHash Type="SHA256" Data="0x3BA92CDE549E8B08837CB3C13D4BB90AED8D0C9DE96C44133DEB194F84E5F64B" SourceFileName="System.Security.Cryptography.Cng.dll" SourceFileLength="16656" />
+          <FileHash Type="SHA256" Data="0x62DED2F8DADC65A389435B36E38034B693E81A90C11581512A2EF66BBB98D425" SourceFileName="System.Security.Cryptography.Csp.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0x62A04E5CBC793C1BB8870B6C665DAF6AD95AAE73DE9B19CF9F4292523A25D2FD" SourceFileName="System.Security.Cryptography.dll" SourceFileLength="2050320" />
+          <FileHash Type="SHA256" Data="0x9ABDCE6AE8EF833A38997C5DD33C9A3EABA6F36C95E3834532B84E4B410ACC1E" SourceFileName="System.Security.Cryptography.Encoding.dll" SourceFileLength="16144" />
+          <FileHash Type="SHA256" Data="0x791369595A94D60B84B6D9B79CA6C08CE4BEA712B48D0EAB0A086CC365427F82" SourceFileName="System.Security.Cryptography.OpenSsl.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0xAAB7CE9F2C315262FC95C74A46BE77B489C7DC1493787F6618A04C32A6B52C40" SourceFileName="System.Security.Cryptography.Pkcs.dll" SourceFileLength="760072" />
+          <FileHash Type="SHA256" Data="0x60E5650D1BDF09C0E13516C80A1AAF9DCEAC232BE1FF100223A99776A5F35608" SourceFileName="System.Security.Cryptography.Primitives.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0x15C5D8620504516DA24132992C6ADED8A79C2AEE7DBEC7647C18BC5631C5D3F5" SourceFileName="System.Security.Cryptography.ProtectedData.dll" SourceFileLength="55592" />
+          <FileHash Type="SHA256" Data="0x3C534E98E605DB3CA21B722AB46EDFDC4D3AA26F9009014B5F8C664576F7DC67" SourceFileName="System.Security.Cryptography.X509Certificates.dll" SourceFileLength="17192" />
+          <FileHash Type="SHA256" Data="0xB799344D7D0EA4C472A1314C9017BD4AA4F95157F90F9640ACCDC6294A54F071" SourceFileName="System.Security.Cryptography.Xml.dll" SourceFileLength="457000" />
+          <FileHash Type="SHA256" Data="0xA319874CECC7153BE3607D741E74C63043EC16DC448828578378055BBF749CAF" SourceFileName="System.Security.dll" SourceFileLength="18696" />
+          <FileHash Type="SHA256" Data="0x0E944F1D3F5380BD96B4CB574964717C10762A94C04B1F6DC954702714EFDCE9" SourceFileName="System.Security.Permissions.dll" SourceFileLength="186640" />
+          <FileHash Type="SHA256" Data="0x751AB397C46B550B52688FBC338BEFD86868AF861F3D8BC99037FE3919CF90EA" SourceFileName="System.Security.Principal.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0xF2F4ADD9DD4414EB9ACA627DB5879D651326855929482B0C5DB2D6D11E61EF50" SourceFileName="System.Security.Principal.Windows.dll" SourceFileLength="186632" />
+          <FileHash Type="SHA256" Data="0x258A8E385577A2516902EC995EC0D5FD82AEB056F58CD060CFFAD15BCC20ECBA" SourceFileName="System.Security.SecureString.dll" SourceFileLength="15632" />
+          <FileHash Type="SHA256" Data="0xEF93F7F930BC5CBF4B3F0B867179816DD8AA6ED6F97610A94B7E9CACC3F35342" SourceFileName="System.ServiceModel.Web.dll" SourceFileLength="17184" />
+          <FileHash Type="SHA256" Data="0x33A7C77BB1727725631C8AE9CFFDFC71297F97EB67CC28B1F598959964391F47" SourceFileName="System.ServiceProcess.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0x85249F08A4AC48A7011F3B6D63DF94B3D6533F47EE8132A493B73E9218B05C86" SourceFileName="System.Text.Encoding.CodePages.dll" SourceFileLength="862480" />
+          <FileHash Type="SHA256" Data="0x491AC5ABC63CEA4CE11DD6E04FA4D03C7CB062FDB95CFF42FD4F345FFD6C8B59" SourceFileName="System.Text.Encoding.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0x80D41D9D48B060A3D2AFCD3108F540040C4F68F4D1B3322FB6455F72E9F2071C" SourceFileName="System.Text.Encoding.Extensions.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0xBF8E70565E09A026029342E1F84A9A1B401945D5D447D52572EEB88DE1EC2268" SourceFileName="System.Text.Encodings.Web.dll" SourceFileLength="133416" />
+          <FileHash Type="SHA256" Data="0xF4916147FEAC5719D20CF2E83297299ACA2F222B0B4FD6454B555CB6C598ACA5" SourceFileName="System.Text.Json.dll" SourceFileLength="1501480" />
+          <FileHash Type="SHA256" Data="0xEC20D22515A7CFD8759EC455590F99BC83A98F6BA0F6F059DF940F32AA2ACEFD" SourceFileName="System.Text.RegularExpressions.dll" SourceFileLength="1022248" />
+          <FileHash Type="SHA256" Data="0xE6F55996B3C9D79FE08D2B2A7ACBBDD7E07350C6B1606FCD23A568EE4972C561" SourceFileName="System.Threading.AccessControl.dll" SourceFileLength="84264" />
+          <FileHash Type="SHA256" Data="0x4CCF7CA8EFB8444DAA3B61593B2FDB10FD5482CB0D2AB5F7C2ABCEE6DBF56112" SourceFileName="System.Threading.Channels.dll" SourceFileLength="133384" />
+          <FileHash Type="SHA256" Data="0xAC57F3F605969F29FC255E7C0BECAE43C8445812EB292640DA13B7240546368C" SourceFileName="System.Threading.dll" SourceFileLength="84232" />
+          <FileHash Type="SHA256" Data="0xCBFB5D6030AD904E7F7A01F9CA334426BB17EE31241424B5190E527807588E35" SourceFileName="System.Threading.Overlapped.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0x430563CEA45E19AFCB2264171637E12FE46261C3D928387E831CA22CE626A30C" SourceFileName="System.Threading.Tasks.Dataflow.dll" SourceFileLength="489736" />
+          <FileHash Type="SHA256" Data="0xFE5DED5ABAEB1147E389E73B04CD3CC1C56E74CE2F1FCE0F33015A4EF8ED9C58" SourceFileName="System.Threading.Tasks.dll" SourceFileLength="17160" />
+          <FileHash Type="SHA256" Data="0xB3EF4D9880DCC5E2096EFFEAA3B36D7F3EBA6B4AFE18C7C1725342664037B043" SourceFileName="System.Threading.Tasks.Extensions.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0xB06FAC332EF73D04B34085954BA177AE1EB81F3F682D05149E3B0236CC9BE5A6" SourceFileName="System.Threading.Tasks.Parallel.dll" SourceFileLength="133384" />
+          <FileHash Type="SHA256" Data="0x3D193FACB4245ACABDB75FD8F72B5D8F1D15417B971A3CCDB83A762054C18465" SourceFileName="System.Threading.Thread.dll" SourceFileLength="16144" />
+          <FileHash Type="SHA256" Data="0x27F3C9DF81890DF056827D978E7A721872E4DD04AA1BDCFB39960D4D471DE7C5" SourceFileName="System.Threading.ThreadPool.dll" SourceFileLength="16144" />
+          <FileHash Type="SHA256" Data="0x5C5000FC36BFD82DA8C2EC51FB4904E38A63ABB69B5687FCD3017322D16963A7" SourceFileName="System.Threading.Timer.dll" SourceFileLength="15624" />
+          <FileHash Type="SHA256" Data="0x351F7A6B99CD21089207BAC9D4ACE5FC65A5467E04730EA05C298D600D90EC9B" SourceFileName="System.Transactions.dll" SourceFileLength="16648" />
+          <FileHash Type="SHA256" Data="0x9533FB5AAEE3B8AA72B6586E636BDDA1F2447E20B9B9041F5360F97B32637A65" SourceFileName="System.Transactions.Local.dll" SourceFileLength="661768" />
+          <FileHash Type="SHA256" Data="0xD21D8A473DCA15C939C16E877B1164A20F7EFED3BDE4B31A1C3204FE3875CF48" SourceFileName="System.ValueTuple.dll" SourceFileLength="15632" />
+          <FileHash Type="SHA256" Data="0x803CA7A0717D085C9FE53394111E97E644CC2E1BDDF89832BC7D13CE1A705C81" SourceFileName="System.Web.dll" SourceFileLength="15656" />
+          <FileHash Type="SHA256" Data="0xEC61088A57A63B5F1633BD4D5E45BF91B57C1D1EF4F179DB028310B3B5AA7EBB" SourceFileName="System.Web.HttpUtility.dll" SourceFileLength="59664" />
+          <FileHash Type="SHA256" Data="0xBD45EBEAF03088826D3FE360DB34A7C370DCD5207E099B950F17D6EE039C934C" SourceFileName="System.Windows.Controls.Ribbon.dll" SourceFileLength="1452296" />
+          <FileHash Type="SHA256" Data="0xE56074EFA8CEA32BA6D89894E3E6D68BC5D1D731414916246E5C558817A44165" SourceFileName="System.Windows.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0xE44F0D229A1169B43BC20DE426998E0E1C09B4FE29FD608C5CAA8E13808950C6" SourceFileName="System.Windows.Extensions.dll" SourceFileLength="74504" />
+          <FileHash Type="SHA256" Data="0xD66C6C9247D0313B2DEBFEAC1D9C566DBDA9A44AB94211E5EE589FF7FA552F7F" SourceFileName="System.Windows.Forms.Design.dll" SourceFileLength="5564712" />
+          <FileHash Type="SHA256" Data="0x231A87323C6E0CC2307BD35E3B8BC48234D2A0AA241E038AE5D49095E2209E2D" SourceFileName="System.Windows.Forms.Design.Editors.dll" SourceFileLength="16648" />
+          <FileHash Type="SHA256" Data="0x7CB10DD55171078176BDF55CF5DF089987D9394E0AD6D70DDA88840218A286DD" SourceFileName="System.Windows.Forms.dll" SourceFileLength="13564200" />
+          <FileHash Type="SHA256" Data="0x86DBAAD0E32559819260FD483822679F4B97C4AD588D93985A2D22A82ED42EC6" SourceFileName="System.Windows.Forms.Primitives.dll" SourceFileLength="3012904" />
+          <FileHash Type="SHA256" Data="0x6C5214F55873FE07CA6ADE2720CD85F8B6C706C6AF63DC92FFA470F4F5700801" SourceFileName="System.Windows.Input.Manipulations.dll" SourceFileLength="137512" />
+          <FileHash Type="SHA256" Data="0x01E1628F6B9F264D9C0228F5B5A1AB773BFF5E37B0A26436D40D007CFACFCB09" SourceFileName="System.Windows.Presentation.dll" SourceFileLength="31016" />
+          <FileHash Type="SHA256" Data="0x27567DCDA597256F738DF300DF44070ED89DB2082B27D37A73FB71570938A8B8" SourceFileName="System.Xaml.dll" SourceFileLength="1423656" />
+          <FileHash Type="SHA256" Data="0x5C8E47E91276BB4ABDE063B41A0577C07B77773E8F25DCB6316AD3CF51A2C9CE" SourceFileName="System.Xml.dll" SourceFileLength="23848" />
+          <FileHash Type="SHA256" Data="0xC34B3BF0138CFA3B5DD1359E2FD03808B1EFCD9058EEF6D1BA7D8613D7BC2C6F" SourceFileName="System.Xml.Linq.dll" SourceFileLength="16168" />
+          <FileHash Type="SHA256" Data="0x66F4E1254DA67A9A168C45C46DF3A9343BFB67F98C4889DE79D54109D027A8A9" SourceFileName="System.Xml.ReaderWriter.dll" SourceFileLength="22312" />
+          <FileHash Type="SHA256" Data="0x64E2CFA3A850EFFB267197DA7FE2C5342A300FFD7A546A78DF273B884B5A9B16" SourceFileName="System.Xml.Serialization.dll" SourceFileLength="16648" />
+          <FileHash Type="SHA256" Data="0x21F35EC9DE5A427B7D268B925A038CB5D6A51AC5A0E562B556A1E18583C4BE6A" SourceFileName="System.Xml.XDocument.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0x5C1CC21D86E2B6ADC02932F18FF4CDFE43E2792C94FB7721BA51D7799FEB80D9" SourceFileName="System.Xml.XmlDocument.dll" SourceFileLength="16136" />
+          <FileHash Type="SHA256" Data="0x502D41DCC92D76D5516293819D35E6A597D23ED347481BD7D136E50B70969A0A" SourceFileName="System.Xml.XmlSerializer.dll" SourceFileLength="18192" />
+          <FileHash Type="SHA256" Data="0xB4D03C4F10C7F438CE89887B6B212FF08765BF5664291A9D3B8E482345B9E7F1" SourceFileName="System.Xml.XPath.dll" SourceFileLength="16144" />
+          <FileHash Type="SHA256" Data="0xB335E796E52F08207F6C0959376DA1E19A0130B473753EA6A6132CB0D32EF5E6" SourceFileName="System.Xml.XPath.XDocument.dll" SourceFileLength="31016" />
+          <FileHash Type="SHA256" Data="0x00EAF42EAC43938C2D2BC8F8B32C4CAEB942484EE5C3D85FD7EC773ABDEDCB6D" SourceFileName="UIAutomationClient.dll" SourceFileLength="416040" />
+          <FileHash Type="SHA256" Data="0x048F06C38723B8B1A062197BD8AB382B3D8A094A84BCEFDC2898CB5125C2C668" SourceFileName="UIAutomationClientSideProviders.dll" SourceFileLength="870696" />
+          <FileHash Type="SHA256" Data="0x10C5C9419D0E40C146BDAE9F32749BCD38AAA5E7BE771A4C32F7C7E6EF376682" SourceFileName="UIAutomationProvider.dll" SourceFileLength="59688" />
+          <FileHash Type="SHA256" Data="0xA6443BB97E5A8E0D4E9BBE39B603736AD8C8B29384938DBC7482292548DE635A" SourceFileName="UIAutomationTypes.dll" SourceFileLength="313608" />
+          <FileHash Type="SHA256" Data="0x9A028654B7281939C634E4E8883A99CA7C7BD9769A1F09E1B4F6FDDF4E9F2B9B" SourceFileName="vcruntime140_cor3.dll" SourceFileLength="120448" />
+          <FileHash Type="SHA256" Data="0xDA5C34A2BD159E8B0AF87A387803DB46AA2599ED141823278C5B15F5D606A8D0" SourceFileName="WindowsBase.dll" SourceFileLength="2255112" />
+          <FileHash Type="SHA256" Data="0x54D7C39079D5F322097F56E879F1F01281092616015D42ABCAF05C196C41E200" SourceFileName="WindowsFormsIntegration.dll" SourceFileLength="211240" />
+          <FileHash Type="SHA256" Data="0x768B0ECB49F803DC83D06B9AFCB54EA4AF1ABC736C7D765B4887E6C64CBCA09A" SourceFileName="WinRT.Runtime.dll" SourceFileLength="528944" />
+          <FileHash Type="SHA256" Data="0x3FCD0F810A512A0D18B5BE4D54A51232662E650357FB780E24180F2D6236D0F6" SourceFileName="wpfgfx_cor3.dll" SourceFileLength="1960232" />
+          <FileHash Type="SHA256" Data="0x3867F0BACCBD27EDD7F5BE74EC41F381112A1D5A7669FDA66D373585FFA57182" SourceFileName="XtremeShell.dll" SourceFileLength="1012224" />
         </FileHashCondition>
-      </Exceptions>
-    </FilePublisherRule>
+      </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="dcde5cf2-7626-46f3-84da-30ed718d07e1" Name="Enable 7zip DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x556A204CA48BE5B1E8E1D01A199B50EDCA672B94D1645A97E26DBB58BE754083" SourceFileName="7z.dll" SourceFileLength="1908736" />
+          <FileHash Type="SHA256" Data="0xFBB5792627DF333444311A36E697AC54F79B86671460AAB24C48ED565ED62DF0" SourceFileName="7-zip.dll" SourceFileLength="101888" />
+          <FileHash Type="SHA256" Data="0x9E5F6FFCD923B2B66C24967D26A7411D08F34616C59DA6707CD2890ED4BD0479" SourceFileName="7-zip32.dll" SourceFileLength="67584" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="395c5f13-1cd8-42c7-ab58-acb370bcb67d" Name="Enable Explorer Patcher DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0xBC8C9383B8F1D92C6E97340D13DDB715091F9B85EAE6F7A5CCF9A4A36F51A60A" SourceFileName="ep_gui.dll" SourceFileLength="815104" />
+          <FileHash Type="SHA256" Data="0xB7FE27D20FD83EF3FC1146B1776A8FA21AF548216EE1691FEB464DD4AB033442" SourceFileName="ep_taskbar.5.dll" SourceFileLength="2476544" />
+          <FileHash Type="SHA256" Data="0x1A96A7FB0CBE44C4D7F67C7241209DF28FB67F481C19E286A0C623FCAF8B9040" SourceFileName="ep_weather_host.dll" SourceFileLength="248320" />
+          <FileHash Type="SHA256" Data="0x129CB1576E70050C290D5ABBB89302BDC42A51F7A1C5AC6FAF13922DCCF8CDF2" SourceFileName="ep_weather_host_stub.dll" SourceFileLength="109568" />
+          <FileHash Type="SHA256" Data="0xA8105AF907465C811CD89BDCDBB012C96948843C26A59B166BFF32166A3E85FD" SourceFileName="ExplorerPatcher.amd64.dll" SourceFileLength="624640" />
+          <FileHash Type="SHA256" Data="0x183F5B04CF9D53CB0172CF9429B9F3EC9B9CC16F73CB97C13357370E6C89B434" SourceFileName="ExplorerPatcher.IA-32.dll" SourceFileLength="173056" />
+          <FileHash Type="SHA256" Data="0x9BD98D842AC1D8571C8043F3A107A23CE80A8E2B8DD7466F827346F33B642CDF" SourceFileName="pnidui.dll" SourceFileLength="2138112" />
+          <FileHash Type="SHA256" Data="0x671C69C3C77CB5E0E551B664DCD2B5E03FA2E45BFA204DFFF5787A168508F5D5" SourceFileName="WebView2Loader.dll" SourceFileLength="159336" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
   </RuleCollection>
-  <RuleCollection Type="Exe" EnforcementMode="AuditOnly">
-    <FilePathRule Id="65290378-a8a4-4e5f-8137-01316ea5bcf9" Name="Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
-      </Conditions>
-    </FilePathRule>
-    <FilePathRule Id="f9de78ff-e8f7-4acb-a33c-1f93cb7fc6c2" Name="More Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
-      </Conditions>
-    </FilePathRule>
+  <RuleCollection Type="Exe" EnforcementMode="Enabled">
     <FilePublisherRule Id="1ed68ee9-02ba-4956-9abc-22be38da9bf7" Name="Block PWSH.exe outside Normal Directories" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
         <FilePublisherCondition PublisherName="O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US" ProductName="MICROSOFT® WINDOWS® OPERATING SYSTEM" BinaryName="PWSH.EXE">
@@ -92,12 +344,37 @@
         <FilePathCondition Path="C:\Windows\WinSxS\*" />
       </Exceptions>
     </FilePublisherRule>
+    <FilePublisherRule Id="5a885b3f-f697-47f8-aa1a-acfb98af3fa9" Name="Block PWSH Outside Normal Directory (Change path to your user name!)" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US" ProductName="POWERSHELL" BinaryName="PWSH.DLL">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+      <Exceptions>
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
+        <FilePathCondition Path="C:\Program Files\PowerShell\*" />
+        <FilePathCondition Path="C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe\*" />
+        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Microsoft\WindowsApps\*" />
+      </Exceptions>
+    </FilePublisherRule>
     <FilePublisherRule Id="d32cc361-8151-41bb-9042-d150851d9d3a" Name="Block Process Hacker Publisher" Description="Legitimate software but sometimes used and abused by malware." UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
         <FilePublisherCondition PublisherName="O=WEN JIA LIU, L=SYDNEY, S=NEW SOUTH WALES, C=AU" ProductName="*" BinaryName="*">
           <BinaryVersionRange LowSection="*" HighSection="*" />
         </FilePublisherCondition>
       </Conditions>
+    </FilePublisherRule>
+    <FilePublisherRule Id="d9877339-804c-44a9-954e-4db95b660d7c" Name="All Signed" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+      <Exceptions>
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
+      </Exceptions>
     </FilePublisherRule>
     <FilePathRule Id="2acf4e9c-e213-49e6-857c-6b32e436696e" Name="Block *.com With Publisher Exceptions" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
@@ -112,9 +389,34 @@
         </FilePublisherCondition>
       </Exceptions>
     </FilePathRule>
+    <FilePathRule Id="602bf8c2-2a4f-4009-8cae-94894c9f05ef" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local (Change Path to your user name!)" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Temp\*" />
+      </Conditions>
+      <Exceptions>
+        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Exceptions>
+    </FilePathRule>
+    <FilePathRule Id="65290378-a8a4-4e5f-8137-01316ea5bcf9" Name="Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
+      </Conditions>
+    </FilePathRule>
     <FilePathRule Id="b15c8ac6-0746-419e-a28e-13a5eb2d59d1" Name="Block All .scr" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
         <FilePathCondition Path="*.scr" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="de3538f3-6ed7-4dd0-883f-1f1dcdb034c7" Name="Disable all MSDOS (.dos) Files" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="*.dos" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="f9de78ff-e8f7-4acb-a33c-1f93cb7fc6c2" Name="More Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
       </Conditions>
     </FilePathRule>
     <FileHashRule Id="2954382f-ea1b-4c87-ad79-7bf67814e0d1" Name="Block NirCMD" Description="Legitimate software but used and abused by some malware. Various Versions Included" UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -149,54 +451,34 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FilePublisherRule Id="d9877339-804c-44a9-954e-4db95b660d7c" Name="All Signed" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FileHashRule Id="47c3421a-a2c0-4708-8bf2-20a5b08b0b0b" Name="Enable Xtremeshell" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
-      </Conditions>
-      <Exceptions>
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
         <FileHashCondition>
-          <FileHash Type="SHA256" Data="0x1C41DFCFA9F6888FCCB9DA73CAC86765A88A6AFA38A1F3E41D5EF4C7CBDA3858" SourceFileName="7z.exe" SourceFileLength="575488" />
-          <FileHash Type="SHA256" Data="0xF16AE618C2978B68E633B438BAD79BE186A341907CE0A3EA7C4343872A949AC7" SourceFileName="7zFM.exe" SourceFileLength="999424" />
-          <FileHash Type="SHA256" Data="0x837BB0D28E193DA5DDB322CC1806F5C33606F3AFC5ECC6895F4B935EC1683EF3" SourceFileName="7zG.exe" SourceFileLength="722944" />
-          <FileHash Type="SHA256" Data="0x37855F3B4D83C3F5693FD9EB58D2647DC457037EDF38CBCA7582FFD4FB9C10B1" SourceFileName="Uninstall.exe" SourceFileLength="17408" />
+          <FileHash Type="SHA256" Data="0x76D5C6F3CD3D3F4A271EEB39E6825C7135493AC79D158A1279F3966AB4A079D4" SourceFileName="createdump.exe" SourceFileLength="61752" />
+          <FileHash Type="SHA256" Data="0x6119E5EE4079691D9217C10BFA9C599B10A852FA022F86E3931013550473AD6D" SourceFileName="XtremeShell.exe" SourceFileLength="349696" />
         </FileHashCondition>
-      </Exceptions>
-    </FilePublisherRule>
-    <FilePathRule Id="602bf8c2-2a4f-4009-8cae-94894c9f05ef" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local (Change Path to your user name!)" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
-      <Conditions>
-        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Temp\*" />
       </Conditions>
-      <Exceptions>
-        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
-      </Exceptions>
-    </FilePathRule>
-    <FilePublisherRule Id="5a885b3f-f697-47f8-aa1a-acfb98af3fa9" Name="Block PWSH Outside Normal Directory (Change path to your user name!)" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+    </FileHashRule>
+    <FileHashRule Id="a783657f-8d56-4d8f-80e2-998ce8e8bb3f" Name="Enable 7zip" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePublisherCondition PublisherName="O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US" ProductName="POWERSHELL" BinaryName="PWSH.DLL">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0xF3053B0E84CD93BCFB9FA21C516E513B12EAAD3D4713E429AC7834B97EBA5605" SourceFileName="7z.exe" SourceFileLength="576512" />
+          <FileHash Type="SHA256" Data="0x27DCFB31E72EDC4C40FB9297DF9296094FE204CE47C5855B3442037E2DCF2FA9" SourceFileName="7zFM.exe" SourceFileLength="999424" />
+          <FileHash Type="SHA256" Data="0x90E5C86AF5EFBB5FC3A8278FFB6E077CE0F9B1711B001B3063C07899EDF998F5" SourceFileName="7zG.exe" SourceFileLength="723968" />
+          <FileHash Type="SHA256" Data="0xB1F2BD738FEDEB2608903E07CE86175936442002992E7A2F73C876FBFCD1C5EE" SourceFileName="Uninstall.exe" SourceFileLength="17408" />
+        </FileHashCondition>
       </Conditions>
-      <Exceptions>
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
-        <FilePathCondition Path="C:\Program Files\PowerShell\*" />
-        <FilePathCondition Path="C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe\*" />
-        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Microsoft\WindowsApps\*" />
-      </Exceptions>
-    </FilePublisherRule>
-    <FilePathRule Id="de3538f3-6ed7-4dd0-883f-1f1dcdb034c7" Name="Disable all MSDOS (.dos) Files" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+    </FileHashRule>
+    <FileHashRule Id="36c797ca-1f1c-4b38-aa9c-20baedea2c51" Name="Enable Explorer Patcher" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="*.dos" />
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x1D2D083DBEB8A8C6694DA9D917A6E6A19B35D96F5139E463F3B2CCAB76BEB3C7" SourceFileName="ep_dwm_svc.exe" SourceFileLength="115200" />
+          <FileHash Type="SHA256" Data="0x2018E94D75D941E1DD7D2B7F35A18B106EDFDA2E5FC9AB45BE43C21F53F4FF29" SourceFileName="ep_setup.exe" SourceFileLength="12009984" />
+        </FileHashCondition>
       </Conditions>
-    </FilePathRule>
+    </FileHashRule>
   </RuleCollection>
-  <RuleCollection Type="Msi" EnforcementMode="AuditOnly">
+  <RuleCollection Type="Msi" EnforcementMode="Enabled">
     <FilePublisherRule Id="5454a419-9b59-468d-a1e8-12501379e32f" Name="All digitally signed Windows Installer files" Description="Allows members of the Everyone group to run digitally signed Windows Installer files." UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
@@ -218,7 +500,23 @@
       </Exceptions>
     </FilePublisherRule>
   </RuleCollection>
-  <RuleCollection Type="Script" EnforcementMode="AuditOnly">
+  <RuleCollection Type="Script" EnforcementMode="Enabled">
+    <FilePublisherRule Id="34c794cd-d3cf-4028-8aa4-c3f9de1a59ab" Name="All Signed" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+      <Exceptions>
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
+      </Exceptions>
+    </FilePublisherRule>
+    <FilePathRule Id="1988cf8e-8caa-46ca-878f-d638f0329a8b" Name="Block init.ps1" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="*\init.ps1" />
+      </Conditions>
+    </FilePathRule>
     <FilePathRule Id="28120a2f-3072-4a52-9be7-c72e948f8d63" Name="More Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
@@ -237,22 +535,6 @@
     <FilePathRule Id="8afa897a-a11f-4b61-87af-e45517eb8903" Name="Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
-      </Conditions>
-    </FilePathRule>
-    <FilePublisherRule Id="34c794cd-d3cf-4028-8aa4-c3f9de1a59ab" Name="All Signed" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
-      </Conditions>
-      <Exceptions>
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
-      </Exceptions>
-    </FilePublisherRule>
-    <FilePathRule Id="1988cf8e-8caa-46ca-878f-d638f0329a8b" Name="Block init.ps1" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
-      <Conditions>
-        <FilePathCondition Path="*\init.ps1" />
       </Conditions>
     </FilePathRule>
   </RuleCollection>
