@@ -16,16 +16,6 @@
         </FilePublisherCondition>
       </Conditions>
     </FilePublisherRule>
-    <FilePathRule Id="3e110d28-dbde-47f7-b0ae-c44b52b11b38" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local (Change path to your username)" Description="--- Always remember to change it back to Deny after finishing.&#xA;---&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
-      <Conditions>
-        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Temp\*" />
-      </Conditions>
-      <Exceptions>
-        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
-      </Exceptions>
-    </FilePathRule>
     <FilePathRule Id="bac4b0bf-6f1b-40e8-8627-8545fa89c8b6" Name="(Default Rule) Microsoft Windows DLLs" Description="Allows members of the Everyone group to load DLLs located in the Windows folder." UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FilePathCondition Path="%WINDIR%\*" />
@@ -277,12 +267,23 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FileHashRule Id="dcde5cf2-7626-46f3-84da-30ed718d07e1" Name="Enable 7zip DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FileHashRule Id="2e788d68-f439-4b1f-a605-5dedd104f3cf" Name="Allow Razer Chorma &amp; Synapse DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FileHashCondition>
-          <FileHash Type="SHA256" Data="0x556A204CA48BE5B1E8E1D01A199B50EDCA672B94D1645A97E26DBB58BE754083" SourceFileName="7z.dll" SourceFileLength="1908736" />
-          <FileHash Type="SHA256" Data="0xFBB5792627DF333444311A36E697AC54F79B86671460AAB24C48ED565ED62DF0" SourceFileName="7-zip.dll" SourceFileLength="101888" />
-          <FileHash Type="SHA256" Data="0x9E5F6FFCD923B2B66C24967D26A7411D08F34616C59DA6707CD2890ED4BD0479" SourceFileName="7-zip32.dll" SourceFileLength="67584" />
+          <FileHash Type="SHA256" Data="0xCE53892637C918F0AF17AEAB61B7E21BA91F1413DF292AAFE4B14EF21DC34B50" SourceFileName="cpuidsdk64.dll" SourceFileLength="4184264" />
+          <FileHash Type="SHA256" Data="0xBB6DE034CEA5AEE6B57425A6B62B167BF4DF28ECA11F541A49870E2B5199C03B" SourceFileName="RzChromaBroadcastAPI64.dll" SourceFileLength="50888" />
+          <FileHash Type="SHA256" Data="0xE36219F7C9D632896B28C4AF336AEBA9F7E4784B9185DA5989C59ACF16320F87" SourceFileName="RzChromaBroadcastManager64.dll" SourceFileLength="258032" />
+          <FileHash Type="SHA256" Data="0x5F7BD55034D471EFBC9565BEC9F553DE8CD692A592E65BADFB394C1A66C7B90B" SourceFileName="RzChromaConnectAPI64.dll" SourceFileLength="220360" />
+          <FileHash Type="SHA256" Data="0xAE4C2614C9B3F8E701088004EF6EA9127B90EF5B584AA3719752942A99A3A98B" SourceFileName="sfInstallHelper.dll" SourceFileLength="146184" />
+          <FileHash Type="SHA256" Data="0xAEE6A215014ABDFD0DFAFE506CE8443E5A2F7F5501ADC564F565C624F1774456" SourceFileName="d3dcompiler_47.dll" SourceFileLength="4916728" />
+          <FileHash Type="SHA256" Data="0x605BEEA74AE4202AC545A0FAB4CFF133640D0A9995CCD9621B5C18CF542183DC" SourceFileName="ffmpeg.dll" SourceFileLength="2704584" />
+          <FileHash Type="SHA256" Data="0xB5172092C5A195A3215161060995444BA431EC70D3F95FE138AF1D22011E6A41" SourceFileName="libEGL.dll" SourceFileLength="492744" />
+          <FileHash Type="SHA256" Data="0x0AF1973B77F392DB1D2152500A4B77FBEA1420EC943A92D901DE90CA980499E7" SourceFileName="libGLESv2.dll" SourceFileLength="7972040" />
+          <FileHash Type="SHA256" Data="0xF6E38A659644CA91825790AFC8EC0B2A9523E6CF65173891950BA698DC1A772D" SourceFileName="vk_swiftshader.dll" SourceFileLength="5384904" />
+          <FileHash Type="SHA256" Data="0x85B43240A00EE69CE26B1584B30BA59CAB83A8F4C876D1918D3712EBE31D6227" SourceFileName="vulkan-1.dll" SourceFileLength="969416" />
+          <FileHash Type="SHA256" Data="0x030D48ADF858B5F648357462EF61B9BC830BCCB1995003ADFAFE764CBEFF934C" SourceFileName="mapping_engine.dll" SourceFileLength="4324552" />
+          <FileHash Type="SHA256" Data="0xAD6789966B475068BE857CDA61BF0E3E147EB36532B93159C42C3FB0641DAA6A" SourceFileName="simple_service.dll" SourceFileLength="2561224" />
+          <FileHash Type="SHA256" Data="0xB998062476DBA1C791F01EBE9D70CDC7FF8532A467A96299DAEFF8E95A89820E" SourceFileName="SysUtilsNative.dll" SourceFileLength="1460936" />
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
@@ -300,6 +301,32 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
+    <FileHashRule Id="dcde5cf2-7626-46f3-84da-30ed718d07e1" Name="Enable 7zip DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x556A204CA48BE5B1E8E1D01A199B50EDCA672B94D1645A97E26DBB58BE754083" SourceFileName="7z.dll" SourceFileLength="1908736" />
+          <FileHash Type="SHA256" Data="0xFBB5792627DF333444311A36E697AC54F79B86671460AAB24C48ED565ED62DF0" SourceFileName="7-zip.dll" SourceFileLength="101888" />
+          <FileHash Type="SHA256" Data="0x9E5F6FFCD923B2B66C24967D26A7411D08F34616C59DA6707CD2890ED4BD0479" SourceFileName="7-zip32.dll" SourceFileLength="67584" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FilePublisherRule Id="bbfca8a2-96c1-4245-b47a-c275381f8016" Name="Allow Razer" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=RAZER USA LTD., L=IRVINE, S=CALIFORNIA, C=US" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+    </FilePublisherRule>
+    <FilePathRule Id="3e110d28-dbde-47f7-b0ae-c44b52b11b38" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing.&#xA;---&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\AppData\Local\Temp\*" />
+      </Conditions>
+      <Exceptions>
+        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Exceptions>
+    </FilePathRule>
   </RuleCollection>
   <RuleCollection Type="Exe" EnforcementMode="Enabled">
     <FilePublisherRule Id="1ed68ee9-02ba-4956-9abc-22be38da9bf7" Name="Block PWSH.exe outside Normal Directories" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -344,20 +371,6 @@
         <FilePathCondition Path="C:\Windows\WinSxS\*" />
       </Exceptions>
     </FilePublisherRule>
-    <FilePublisherRule Id="5a885b3f-f697-47f8-aa1a-acfb98af3fa9" Name="Block PWSH Outside Normal Directory (Change path to your user name!)" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
-      <Conditions>
-        <FilePublisherCondition PublisherName="O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US" ProductName="POWERSHELL" BinaryName="PWSH.DLL">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
-      </Conditions>
-      <Exceptions>
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
-        <FilePathCondition Path="C:\Program Files\PowerShell\*" />
-        <FilePathCondition Path="C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe\*" />
-        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Microsoft\WindowsApps\*" />
-      </Exceptions>
-    </FilePublisherRule>
     <FilePublisherRule Id="d32cc361-8151-41bb-9042-d150851d9d3a" Name="Block Process Hacker Publisher" Description="Legitimate software but sometimes used and abused by malware." UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
         <FilePublisherCondition PublisherName="O=WEN JIA LIU, L=SYDNEY, S=NEW SOUTH WALES, C=AU" ProductName="*" BinaryName="*">
@@ -385,16 +398,6 @@
           <BinaryVersionRange LowSection="*" HighSection="*" />
         </FilePublisherCondition>
         <FilePublisherCondition PublisherName="O=ADOBE INC., L=SAN JOSE, S=CA, C=US" ProductName="ADOBE AFTER EFFECTS 2023" BinaryName="AFTERFX.EXE">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
-      </Exceptions>
-    </FilePathRule>
-    <FilePathRule Id="602bf8c2-2a4f-4009-8cae-94894c9f05ef" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local (Change Path to your user name!)" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
-      <Conditions>
-        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Temp\*" />
-      </Conditions>
-      <Exceptions>
-        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
           <BinaryVersionRange LowSection="*" HighSection="*" />
         </FilePublisherCondition>
       </Exceptions>
@@ -451,6 +454,30 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
+    <FileHashRule Id="36c797ca-1f1c-4b38-aa9c-20baedea2c51" Name="Enable Explorer Patcher" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x1D2D083DBEB8A8C6694DA9D917A6E6A19B35D96F5139E463F3B2CCAB76BEB3C7" SourceFileName="ep_dwm_svc.exe" SourceFileLength="115200" />
+          <FileHash Type="SHA256" Data="0x2018E94D75D941E1DD7D2B7F35A18B106EDFDA2E5FC9AB45BE43C21F53F4FF29" SourceFileName="ep_setup.exe" SourceFileLength="12009984" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="39c48803-99b2-4802-8b26-b59643c176ff" Name="Allow Razer Chorma &amp; Synapse" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x6271485739B3D37FF5CA6A46658AB60FBED77541C80587CBC694EFCC24F1C97F" SourceFileName="Uninstall-Chroma.exe" SourceFileLength="45952" />
+          <FileHash Type="SHA256" Data="0x28601B30C124C9D9884D0AE9A00B9583BD33ED959720C0C73F5F678932AE3FDC" SourceFileName="Uninstall-Synapse.exe" SourceFileLength="45952" />
+          <FileHash Type="SHA256" Data="0xC3625C7023F9A67DDCDB9D7BF18FF92BC90D6F3D00B2575DF6D1E2CA9C85C722" SourceFileName="razer_elevation_service.exe" SourceFileLength="1741960" />
+          <FileHash Type="SHA256" Data="0x4E9038578AE0CE35187570A6896419B3D85A0FCF17D81C3F3878C0899FA1BCDC" SourceFileName="RazerAppEngine.exe" SourceFileLength="853640" />
+          <FileHash Type="SHA256" Data="0x208AD3AB7891412D47385D0F6B456B202423E8458EAB90D7B4BC1C04019F1D76" SourceFileName="RazerAppEngine.exe" SourceFileLength="176934600" />
+          <FileHash Type="SHA256" Data="0x8F7E1D11731503F68CF6AB80CF2E0DB1172B0752B099985AFC61FC6D2E0935BE" SourceFileName="RzEngineMon.exe" SourceFileLength="909960" />
+          <FileHash Type="SHA256" Data="0x81A1632A04C078D37EA1215A02B54AC2DABE4EE9940FF9CC0F6D46C815014032" SourceFileName="rzNotification.exe" SourceFileLength="984712" />
+          <FileHash Type="SHA256" Data="0x12E77EFC4BBFC7D5C3C7B30B9E77C3B1B918216760F399803673AEFAF4DDF60B" SourceFileName="RzPowerTool.exe" SourceFileLength="1052296" />
+          <FileHash Type="SHA256" Data="0x83CE543B50AC7F05D677AFC0B24A9D81AE036C36A2C853D5E18D98CCB8853AE6" SourceFileName="RzSecurityTool.exe" SourceFileLength="856264" />
+          <FileHash Type="SHA256" Data="0xD1427897A0C36054661E55B8E5FEE478BC06223F4D2E32826ADB4E496F350F34" SourceFileName="Uninstall.exe" SourceFileLength="58384" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
     <FileHashRule Id="47c3421a-a2c0-4708-8bf2-20a5b08b0b0b" Name="Enable Xtremeshell" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FileHashCondition>
@@ -469,14 +496,37 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FileHashRule Id="36c797ca-1f1c-4b38-aa9c-20baedea2c51" Name="Enable Explorer Patcher" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FilePublisherRule Id="b50e16ae-d4c7-442a-8263-c0c53efbbe95" Name="Allow Razer" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FileHashCondition>
-          <FileHash Type="SHA256" Data="0x1D2D083DBEB8A8C6694DA9D917A6E6A19B35D96F5139E463F3B2CCAB76BEB3C7" SourceFileName="ep_dwm_svc.exe" SourceFileLength="115200" />
-          <FileHash Type="SHA256" Data="0x2018E94D75D941E1DD7D2B7F35A18B106EDFDA2E5FC9AB45BE43C21F53F4FF29" SourceFileName="ep_setup.exe" SourceFileLength="12009984" />
-        </FileHashCondition>
+        <FilePublisherCondition PublisherName="O=RAZER USA LTD., L=IRVINE, S=CALIFORNIA, C=US" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
       </Conditions>
-    </FileHashRule>
+    </FilePublisherRule>
+    <FilePublisherRule Id="5a885b3f-f697-47f8-aa1a-acfb98af3fa9" Name="Block PWSH Outside Normal Directory" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US" ProductName="POWERSHELL" BinaryName="PWSH.DLL">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+      <Exceptions>
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
+        <FilePathCondition Path="C:\Program Files\PowerShell\*" />
+        <FilePathCondition Path="C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe\*" />
+        <FilePathCondition Path="C:\Users\*l\AppData\Local\Microsoft\WindowsApps\*" />
+      </Exceptions>
+    </FilePublisherRule>
+    <FilePathRule Id="602bf8c2-2a4f-4009-8cae-94894c9f05ef" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\AppData\Local\Temp\*" />
+      </Conditions>
+      <Exceptions>
+        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Exceptions>
+    </FilePathRule>
   </RuleCollection>
   <RuleCollection Type="Msi" EnforcementMode="Enabled">
     <FilePublisherRule Id="5454a419-9b59-468d-a1e8-12501379e32f" Name="All digitally signed Windows Installer files" Description="Allows members of the Everyone group to run digitally signed Windows Installer files." UserOrGroupSid="S-1-1-0" Action="Allow">
@@ -522,20 +572,20 @@
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
       </Conditions>
     </FilePathRule>
-    <FilePathRule Id="7db12d15-41b3-42b3-ae96-1e2288db9374" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local (Change path to your username)" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
+    <FilePathRule Id="8afa897a-a11f-4b61-87af-e45517eb8903" Name="Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Temp\*" />
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="7db12d15-41b3-42b3-ae96-1e2288db9374" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\AppData\Local\Temp\*" />
       </Conditions>
       <Exceptions>
         <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
           <BinaryVersionRange LowSection="*" HighSection="*" />
         </FilePublisherCondition>
       </Exceptions>
-    </FilePathRule>
-    <FilePathRule Id="8afa897a-a11f-4b61-87af-e45517eb8903" Name="Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
-      </Conditions>
     </FilePathRule>
   </RuleCollection>
 </AppLockerPolicy>
