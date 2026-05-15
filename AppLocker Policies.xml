@@ -16,12 +16,102 @@
         </FilePublisherCondition>
       </Conditions>
     </FilePublisherRule>
+    <FilePublisherRule Id="bbfca8a2-96c1-4245-b47a-c275381f8016" Name="Allow Razer" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=RAZER USA LTD., L=IRVINE, S=CALIFORNIA, C=US" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+    </FilePublisherRule>
+    <FilePathRule Id="11dd6977-81d4-42e4-9e2c-2f8509192591" Name="Allow VSCodium5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="3e110d28-dbde-47f7-b0ae-c44b52b11b38" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing.&#xA;---&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\AppData\Local\Temp\*" />
+      </Conditions>
+      <Exceptions>
+        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Exceptions>
+    </FilePathRule>
+    <FilePathRule Id="882ef5ec-bcb0-4916-aaa3-704ed5e7ab96" Name="Allow VSCodium1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="8e77d241-dfc3-4fbe-b9ba-46bf23982e04" Name="Allow VSCodium5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="96a40a80-dd18-4733-af8e-d0272277fc31" Name="Allow VSCodium2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="b3bd3cf7-92b6-4ea9-87bf-528112647501" Name="Allow VSCodium3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode-oss\*" />
+      </Conditions>
+    </FilePathRule>
     <FilePathRule Id="bac4b0bf-6f1b-40e8-8627-8545fa89c8b6" Name="(Default Rule) Microsoft Windows DLLs" Description="Allows members of the Everyone group to load DLLs located in the Windows folder." UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FilePathCondition Path="%WINDIR%\*" />
       </Conditions>
     </FilePathRule>
-    <FileHashRule Id="1c1f9c30-678b-43f4-9af5-18fd959014a0" Name="Enable Xtremeshell" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FilePathRule Id="dafd6e90-d8f1-4456-8c93-bcd0d62aa788" Name="Allow VSCodium4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode-oss\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FileHashRule Id="395c5f13-1cd8-42c7-ab58-acb370bcb67d" Name="Enable Explorer Patcher DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0xBC8C9383B8F1D92C6E97340D13DDB715091F9B85EAE6F7A5CCF9A4A36F51A60A" SourceFileName="ep_gui.dll" SourceFileLength="815104" />
+          <FileHash Type="SHA256" Data="0xB7FE27D20FD83EF3FC1146B1776A8FA21AF548216EE1691FEB464DD4AB033442" SourceFileName="ep_taskbar.5.dll" SourceFileLength="2476544" />
+          <FileHash Type="SHA256" Data="0x1A96A7FB0CBE44C4D7F67C7241209DF28FB67F481C19E286A0C623FCAF8B9040" SourceFileName="ep_weather_host.dll" SourceFileLength="248320" />
+          <FileHash Type="SHA256" Data="0x129CB1576E70050C290D5ABBB89302BDC42A51F7A1C5AC6FAF13922DCCF8CDF2" SourceFileName="ep_weather_host_stub.dll" SourceFileLength="109568" />
+          <FileHash Type="SHA256" Data="0xA8105AF907465C811CD89BDCDBB012C96948843C26A59B166BFF32166A3E85FD" SourceFileName="ExplorerPatcher.amd64.dll" SourceFileLength="624640" />
+          <FileHash Type="SHA256" Data="0x183F5B04CF9D53CB0172CF9429B9F3EC9B9CC16F73CB97C13357370E6C89B434" SourceFileName="ExplorerPatcher.IA-32.dll" SourceFileLength="173056" />
+          <FileHash Type="SHA256" Data="0x9BD98D842AC1D8571C8043F3A107A23CE80A8E2B8DD7466F827346F33B642CDF" SourceFileName="pnidui.dll" SourceFileLength="2138112" />
+          <FileHash Type="SHA256" Data="0x671C69C3C77CB5E0E551B664DCD2B5E03FA2E45BFA204DFFF5787A168508F5D5" SourceFileName="WebView2Loader.dll" SourceFileLength="159336" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="dcde5cf2-7626-46f3-84da-30ed718d07e1" Name="Enable 7zip DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x556A204CA48BE5B1E8E1D01A199B50EDCA672B94D1645A97E26DBB58BE754083" SourceFileName="7z.dll" SourceFileLength="1908736" />
+          <FileHash Type="SHA256" Data="0xFBB5792627DF333444311A36E697AC54F79B86671460AAB24C48ED565ED62DF0" SourceFileName="7-zip.dll" SourceFileLength="101888" />
+          <FileHash Type="SHA256" Data="0x9E5F6FFCD923B2B66C24967D26A7411D08F34616C59DA6707CD2890ED4BD0479" SourceFileName="7-zip32.dll" SourceFileLength="67584" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FilePathRule Id="133a1709-d8ab-41b7-84a3-5df0699218a2" Name="Allow Razer1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Razer\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="72cd71a5-fdc1-4a29-9096-e448f21f20b3" Name="Allow Razer2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Razer\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="933704d0-a3f0-4e8e-9c97-42012b12d4bf" Name="Allow Razer3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Program Files\Razer\RazerAppEngine\app-4.0.662\resources\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="c15f23f9-5ad7-41f0-942c-8031e43bce7b" Name="Allow Razer4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Program Files\Razer\RazerAppEngine\app-4.0.662\resources\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FileHashRule Id="1c1f9c30-678b-43f4-9af5-18fd959014a0" Name="Allow Xtremeshell 5.2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FileHashCondition>
           <FileHash Type="SHA256" Data="0x6ADA19EB3448CA0EB31DFC3705EEACD2F51097F4552231CE38816A3E5C94C0C9" SourceFileName="Accessibility.dll" SourceFileLength="21256" />
@@ -267,7 +357,7 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FileHashRule Id="2e788d68-f439-4b1f-a605-5dedd104f3cf" Name="Allow Razer Chorma &amp; Synapse DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FileHashRule Id="2e788d68-f439-4b1f-a605-5dedd104f3cf" Name="Allow Razer5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FileHashCondition>
           <FileHash Type="SHA256" Data="0xCE53892637C918F0AF17AEAB61B7E21BA91F1413DF292AAFE4B14EF21DC34B50" SourceFileName="cpuidsdk64.dll" SourceFileLength="4184264" />
@@ -287,45 +377,15 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FileHashRule Id="395c5f13-1cd8-42c7-ab58-acb370bcb67d" Name="Enable Explorer Patcher DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FilePathRule Id="2463dfa7-9926-46ec-8024-22a1f6ff0a24" Name="Allow WinAero Tweaker1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FileHashCondition>
-          <FileHash Type="SHA256" Data="0xBC8C9383B8F1D92C6E97340D13DDB715091F9B85EAE6F7A5CCF9A4A36F51A60A" SourceFileName="ep_gui.dll" SourceFileLength="815104" />
-          <FileHash Type="SHA256" Data="0xB7FE27D20FD83EF3FC1146B1776A8FA21AF548216EE1691FEB464DD4AB033442" SourceFileName="ep_taskbar.5.dll" SourceFileLength="2476544" />
-          <FileHash Type="SHA256" Data="0x1A96A7FB0CBE44C4D7F67C7241209DF28FB67F481C19E286A0C623FCAF8B9040" SourceFileName="ep_weather_host.dll" SourceFileLength="248320" />
-          <FileHash Type="SHA256" Data="0x129CB1576E70050C290D5ABBB89302BDC42A51F7A1C5AC6FAF13922DCCF8CDF2" SourceFileName="ep_weather_host_stub.dll" SourceFileLength="109568" />
-          <FileHash Type="SHA256" Data="0xA8105AF907465C811CD89BDCDBB012C96948843C26A59B166BFF32166A3E85FD" SourceFileName="ExplorerPatcher.amd64.dll" SourceFileLength="624640" />
-          <FileHash Type="SHA256" Data="0x183F5B04CF9D53CB0172CF9429B9F3EC9B9CC16F73CB97C13357370E6C89B434" SourceFileName="ExplorerPatcher.IA-32.dll" SourceFileLength="173056" />
-          <FileHash Type="SHA256" Data="0x9BD98D842AC1D8571C8043F3A107A23CE80A8E2B8DD7466F827346F33B642CDF" SourceFileName="pnidui.dll" SourceFileLength="2138112" />
-          <FileHash Type="SHA256" Data="0x671C69C3C77CB5E0E551B664DCD2B5E03FA2E45BFA204DFFF5787A168508F5D5" SourceFileName="WebView2Loader.dll" SourceFileLength="159336" />
-        </FileHashCondition>
+        <FilePathCondition Path="%PROGRAMFILES%\Winaero Tweaker\*\*" />
       </Conditions>
-    </FileHashRule>
-    <FileHashRule Id="dcde5cf2-7626-46f3-84da-30ed718d07e1" Name="Enable 7zip DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    </FilePathRule>
+    <FilePathRule Id="61c2494a-dbce-4370-99bb-8f398a9c0e30" Name="Allow WinAero Tweaker2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FileHashCondition>
-          <FileHash Type="SHA256" Data="0x556A204CA48BE5B1E8E1D01A199B50EDCA672B94D1645A97E26DBB58BE754083" SourceFileName="7z.dll" SourceFileLength="1908736" />
-          <FileHash Type="SHA256" Data="0xFBB5792627DF333444311A36E697AC54F79B86671460AAB24C48ED565ED62DF0" SourceFileName="7-zip.dll" SourceFileLength="101888" />
-          <FileHash Type="SHA256" Data="0x9E5F6FFCD923B2B66C24967D26A7411D08F34616C59DA6707CD2890ED4BD0479" SourceFileName="7-zip32.dll" SourceFileLength="67584" />
-        </FileHashCondition>
+        <FilePathCondition Path="%PROGRAMFILES%\Winaero Tweaker\*" />
       </Conditions>
-    </FileHashRule>
-    <FilePublisherRule Id="bbfca8a2-96c1-4245-b47a-c275381f8016" Name="Allow Razer" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePublisherCondition PublisherName="O=RAZER USA LTD., L=IRVINE, S=CALIFORNIA, C=US" ProductName="*" BinaryName="*">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
-      </Conditions>
-    </FilePublisherRule>
-    <FilePathRule Id="3e110d28-dbde-47f7-b0ae-c44b52b11b38" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing.&#xA;---&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
-      <Conditions>
-        <FilePathCondition Path="C:\Users\*\AppData\Local\Temp\*" />
-      </Conditions>
-      <Exceptions>
-        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
-      </Exceptions>
     </FilePathRule>
   </RuleCollection>
   <RuleCollection Type="Exe" EnforcementMode="Enabled">
@@ -340,7 +400,7 @@
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
         <FilePathCondition Path="C:\Program Files\PowerShell\*" />
         <FilePathCondition Path="C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe\*" />
-        <FilePathCondition Path="C:\Users\YourUserName\AppData\Local\Microsoft\WindowsApps\*" />
+        <FilePathCondition Path="C:\Users\saril\AppData\Local\Microsoft\WindowsApps\*" />
       </Exceptions>
     </FilePublisherRule>
     <FilePublisherRule Id="2febde46-b64c-4daf-be9b-1c3f71d5c55b" Name="Block Powershell ISE Outside Original Paths" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -371,6 +431,20 @@
         <FilePathCondition Path="C:\Windows\WinSxS\*" />
       </Exceptions>
     </FilePublisherRule>
+    <FilePublisherRule Id="5a885b3f-f697-47f8-aa1a-acfb98af3fa9" Name="Block PWSH Outside Normal Directory" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US" ProductName="POWERSHELL" BinaryName="PWSH.DLL">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+      <Exceptions>
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
+        <FilePathCondition Path="C:\Program Files\PowerShell\*" />
+        <FilePathCondition Path="C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe\*" />
+        <FilePathCondition Path="C:\Users\*l\AppData\Local\Microsoft\WindowsApps\*" />
+      </Exceptions>
+    </FilePublisherRule>
     <FilePublisherRule Id="d32cc361-8151-41bb-9042-d150851d9d3a" Name="Block Process Hacker Publisher" Description="Legitimate software but sometimes used and abused by malware." UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
         <FilePublisherCondition PublisherName="O=WEN JIA LIU, L=SYDNEY, S=NEW SOUTH WALES, C=AU" ProductName="*" BinaryName="*">
@@ -389,6 +463,11 @@
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
       </Exceptions>
     </FilePublisherRule>
+    <FilePathRule Id="229032a3-a6c6-4ed2-9099-85c1b2616a21" Name="Allow VSCodium6" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*\*" />
+      </Conditions>
+    </FilePathRule>
     <FilePathRule Id="2acf4e9c-e213-49e6-857c-6b32e436696e" Name="Block *.com With Publisher Exceptions" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
         <FilePathCondition Path="*.com" />
@@ -402,9 +481,39 @@
         </FilePublisherCondition>
       </Exceptions>
     </FilePathRule>
+    <FilePathRule Id="393da230-eb69-442a-a889-e67f8f160ba0" Name="Allow VSCodium1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="602bf8c2-2a4f-4009-8cae-94894c9f05ef" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\AppData\Local\Temp\*" />
+      </Conditions>
+      <Exceptions>
+        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Exceptions>
+    </FilePathRule>
     <FilePathRule Id="65290378-a8a4-4e5f-8137-01316ea5bcf9" Name="Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="65de3e73-e024-45ae-9a2b-0186dfcce153" Name="Allow VSCodium5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="73872375-4ce5-4846-b13a-dac3a25297c0" Name="Allow VSCodium2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="7d07c5e9-1610-4b28-9514-b4a95ca69538" Name="Allow Winaero Tweaker2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Winaero Tweaker\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="b15c8ac6-0746-419e-a28e-13a5eb2d59d1" Name="Block All .scr" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -412,9 +521,24 @@
         <FilePathCondition Path="*.scr" />
       </Conditions>
     </FilePathRule>
+    <FilePathRule Id="d120a2ac-fc94-4b32-909a-072480b2ca24" Name="Allow VSCodium4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode-oss\*\*" />
+      </Conditions>
+    </FilePathRule>
     <FilePathRule Id="de3538f3-6ed7-4dd0-883f-1f1dcdb034c7" Name="Disable all MSDOS (.dos) Files" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
         <FilePathCondition Path="*.dos" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="e8f1eee4-ba78-4842-9700-15b4c6e5adf9" Name="Allow VSCodium3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode-oss\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="f17d0669-60ab-47ad-b7a4-8a4cec55a7ea" Name="Allow Winaero Tweaker1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Winaero Tweaker\*\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="f9de78ff-e8f7-4acb-a33c-1f93cb7fc6c2" Name="More Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
@@ -454,15 +578,51 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FileHashRule Id="36c797ca-1f1c-4b38-aa9c-20baedea2c51" Name="Enable Explorer Patcher" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FileHashRule Id="80e8a68e-23ba-4d61-83cf-b7ea52ef3990" Name="Allow VSCodium installer" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FileHashCondition>
-          <FileHash Type="SHA256" Data="0x1D2D083DBEB8A8C6694DA9D917A6E6A19B35D96F5139E463F3B2CCAB76BEB3C7" SourceFileName="ep_dwm_svc.exe" SourceFileLength="115200" />
-          <FileHash Type="SHA256" Data="0x2018E94D75D941E1DD7D2B7F35A18B106EDFDA2E5FC9AB45BE43C21F53F4FF29" SourceFileName="ep_setup.exe" SourceFileLength="12009984" />
+          <FileHash Type="SHA256" Data="0x5BE5477FD2CA4F8B646164AC630EB584105E97D14674B72BE049A667C62B9087" SourceFileName="VSCodiumUserSetup-x64-1.116.02821.exe" SourceFileLength="132878232" />
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FileHashRule Id="39c48803-99b2-4802-8b26-b59643c176ff" Name="Allow Razer Chorma &amp; Synapse" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FileHashRule Id="a783657f-8d56-4d8f-80e2-998ce8e8bb3f" Name="Enable 7zip" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0xF3053B0E84CD93BCFB9FA21C516E513B12EAAD3D4713E429AC7834B97EBA5605" SourceFileName="7z.exe" SourceFileLength="576512" />
+          <FileHash Type="SHA256" Data="0x27DCFB31E72EDC4C40FB9297DF9296094FE204CE47C5855B3442037E2DCF2FA9" SourceFileName="7zFM.exe" SourceFileLength="999424" />
+          <FileHash Type="SHA256" Data="0x90E5C86AF5EFBB5FC3A8278FFB6E077CE0F9B1711B001B3063C07899EDF998F5" SourceFileName="7zG.exe" SourceFileLength="723968" />
+          <FileHash Type="SHA256" Data="0xB1F2BD738FEDEB2608903E07CE86175936442002992E7A2F73C876FBFCD1C5EE" SourceFileName="Uninstall.exe" SourceFileLength="17408" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FilePublisherRule Id="b50e16ae-d4c7-442a-8263-c0c53efbbe95" Name="Allow Razer1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=RAZER USA LTD., L=IRVINE, S=CALIFORNIA, C=US" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+    </FilePublisherRule>
+    <FilePathRule Id="0027fe6b-3782-4f15-a8b3-acf8df9e380c" Name="Allow Razer2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Razer\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="2c16b9d0-9fbf-4065-a5f9-61388f842aa7" Name="Allow Razer3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Program Files\Razer\RazerAppEngine\app-4.0.662\resources\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="8f91c2be-2c1e-46c9-81bf-7b75db8965de" Name="Allow Razer4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Razer\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="e2c5da30-aaf7-47e4-b40a-258e4a6864ab" Name="Allow Razer5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Program Files\Razer\RazerAppEngine\app-4.0.662\resources" />
+      </Conditions>
+    </FilePathRule>
+    <FileHashRule Id="39c48803-99b2-4802-8b26-b59643c176ff" Name="Allow Razer6" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FileHashCondition>
           <FileHash Type="SHA256" Data="0x6271485739B3D37FF5CA6A46658AB60FBED77541C80587CBC694EFCC24F1C97F" SourceFileName="Uninstall-Chroma.exe" SourceFileLength="45952" />
@@ -478,7 +638,22 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FileHashRule Id="47c3421a-a2c0-4708-8bf2-20a5b08b0b0b" Name="Enable Xtremeshell" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FileHashRule Id="d5f50be0-f981-4a53-8eed-071f96075557" Name="Allow WinAero Tweaker installer" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0xEEB53CB151B224A30674DD276515B4694F7FE3F68ABBD1A0DEA0A8FE392A9F73" SourceFileName="WinaeroTweaker-1.65.0.0-setup.exe" SourceFileLength="6108658" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="36c797ca-1f1c-4b38-aa9c-20baedea2c51" Name="Allow Explorer Patcher" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x1D2D083DBEB8A8C6694DA9D917A6E6A19B35D96F5139E463F3B2CCAB76BEB3C7" SourceFileName="ep_dwm_svc.exe" SourceFileLength="115200" />
+          <FileHash Type="SHA256" Data="0x2018E94D75D941E1DD7D2B7F35A18B106EDFDA2E5FC9AB45BE43C21F53F4FF29" SourceFileName="ep_setup.exe" SourceFileLength="12009984" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="47c3421a-a2c0-4708-8bf2-20a5b08b0b0b" Name="Allow Xtremeshell 5.2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FileHashCondition>
           <FileHash Type="SHA256" Data="0x76D5C6F3CD3D3F4A271EEB39E6825C7135493AC79D158A1279F3966AB4A079D4" SourceFileName="createdump.exe" SourceFileLength="61752" />
@@ -486,47 +661,19 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FileHashRule Id="a783657f-8d56-4d8f-80e2-998ce8e8bb3f" Name="Enable 7zip" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FileHashRule Id="57ff88ec-5731-4bcd-95e1-5949782e464d" Name="Allow Xtremeshell Portables (4.0, 4.3, 4.3.1, 4.4, 5.0, 5.1, 5.2)" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FileHashCondition>
-          <FileHash Type="SHA256" Data="0xF3053B0E84CD93BCFB9FA21C516E513B12EAAD3D4713E429AC7834B97EBA5605" SourceFileName="7z.exe" SourceFileLength="576512" />
-          <FileHash Type="SHA256" Data="0x27DCFB31E72EDC4C40FB9297DF9296094FE204CE47C5855B3442037E2DCF2FA9" SourceFileName="7zFM.exe" SourceFileLength="999424" />
-          <FileHash Type="SHA256" Data="0x90E5C86AF5EFBB5FC3A8278FFB6E077CE0F9B1711B001B3063C07899EDF998F5" SourceFileName="7zG.exe" SourceFileLength="723968" />
-          <FileHash Type="SHA256" Data="0xB1F2BD738FEDEB2608903E07CE86175936442002992E7A2F73C876FBFCD1C5EE" SourceFileName="Uninstall.exe" SourceFileLength="17408" />
+          <FileHash Type="SHA256" Data="0x0C5C80EB191AEEF0A43BEBFA7E15DF76F7A548ABAE0555152EC0E5752CB2D118" SourceFileName="XtremeShell.4.0.Portable.exe" SourceFileLength="9551360" />
+          <FileHash Type="SHA256" Data="0x1F8A3B7C1C2B3CBC8829CC2DCD8D14BAAE8A3CE55FAB23E564AD6F210F4F5230" SourceFileName="XtremeShell.4.3.Portable.exe" SourceFileLength="9553408" />
+          <FileHash Type="SHA256" Data="0xE0B81BE52183A0ADA846F7FB7C2A2A312937BD7D913EA911C04F51F7117152CB" SourceFileName="XtremeShell_4.3.1_Portable.exe" SourceFileLength="9571840" />
+          <FileHash Type="SHA256" Data="0x3A1824AD523883BAB1537C4A71E5A4E7121979A8D8E93166969C090A95669F38" SourceFileName="XtremeShell.5.0.Portable.exe" SourceFileLength="194683913" />
+          <FileHash Type="SHA256" Data="0x9F06D0FB1F30F28F1109DB957479B840599AD21757049828E2FAB4A89714E3A7" SourceFileName="XtremeShell_4.4_Portable.exe" SourceFileLength="9585664" />
+          <FileHash Type="SHA256" Data="0xE17520393772D2208DF882C0BFA745046E565C1A1825F280996FDD4488E6229B" SourceFileName="XtremeShell.5.1.Portable.exe" SourceFileLength="194692099" />
+          <FileHash Type="SHA256" Data="0x91E886C656773963956C08CB41E912815A18843369D41BD1353B1CB0C2CD2ED4" SourceFileName="XtremeShell.5.2.Portable.exe" SourceFileLength="194692099" />
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FilePublisherRule Id="b50e16ae-d4c7-442a-8263-c0c53efbbe95" Name="Allow Razer" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePublisherCondition PublisherName="O=RAZER USA LTD., L=IRVINE, S=CALIFORNIA, C=US" ProductName="*" BinaryName="*">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
-      </Conditions>
-    </FilePublisherRule>
-    <FilePublisherRule Id="5a885b3f-f697-47f8-aa1a-acfb98af3fa9" Name="Block PWSH Outside Normal Directory" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
-      <Conditions>
-        <FilePublisherCondition PublisherName="O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US" ProductName="POWERSHELL" BinaryName="PWSH.DLL">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
-      </Conditions>
-      <Exceptions>
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
-        <FilePathCondition Path="C:\Program Files\PowerShell\*" />
-        <FilePathCondition Path="C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe\*" />
-        <FilePathCondition Path="C:\Users\*l\AppData\Local\Microsoft\WindowsApps\*" />
-      </Exceptions>
-    </FilePublisherRule>
-    <FilePathRule Id="602bf8c2-2a4f-4009-8cae-94894c9f05ef" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
-      <Conditions>
-        <FilePathCondition Path="C:\Users\*\AppData\Local\Temp\*" />
-      </Conditions>
-      <Exceptions>
-        <FilePublisherCondition PublisherName="*" ProductName="*" BinaryName="*">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
-      </Exceptions>
-    </FilePathRule>
   </RuleCollection>
   <RuleCollection Type="Msi" EnforcementMode="Enabled">
     <FilePublisherRule Id="5454a419-9b59-468d-a1e8-12501379e32f" Name="All digitally signed Windows Installer files" Description="Allows members of the Everyone group to run digitally signed Windows Installer files." UserOrGroupSid="S-1-1-0" Action="Allow">
@@ -549,6 +696,36 @@
         </FileHashCondition>
       </Exceptions>
     </FilePublisherRule>
+    <FilePathRule Id="2c8653b4-f120-427b-9db4-5e03ac3f5824" Name="More Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="5e207da6-1774-4d1a-ad34-91e2190f5cfb" Name="Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
+      </Conditions>
+    </FilePathRule>
+    <FileHashRule Id="2ff26d3a-f193-418a-9fd7-6327179b2311" Name="Allow GitHub Desktop" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x30BD42824B8C35B60EF6E9379F5E27AB8F03392D8FE8FBE778040CCE8EEA08C9" SourceFileName="GitHubDesktopSetup-x64.msi" SourceFileLength="189882368" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="8a42dac0-6c78-4019-b846-4b5a00606182" Name="Allow Xrtemeshell Installers (4.0, 4.3, 4.3.1, 4.4, 5.0, 5.1, 5.2)" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0xBF26C3EE8FE356B9919A24E02D3215C27591DF3DF796ED3FD5DF2CE63D3129FF" SourceFileName="XtremeShell.4.0.Installer.msi" SourceFileLength="17416192" />
+          <FileHash Type="SHA256" Data="0xA40D3600B385E4A11372363CAB5F43ECB0EC498F34D9682F98DF1A564ABFDD23" SourceFileName="XtremeShell.4.3.Installer.msi" SourceFileLength="17424384" />
+          <FileHash Type="SHA256" Data="0x4DB08FB7BE6478211B83D09C7D9F800B91373EDA77A30D599EC9DE3CA83C67D0" SourceFileName="XtremeShell_4.3.1_Installer.msi" SourceFileLength="17436672" />
+          <FileHash Type="SHA256" Data="0x9C999587E5B416CBB1D1B54A1244C376DF33D5F53A3A0CE2454DCEAE25BAE6BC" SourceFileName="XtremeShell_4.4_Installer.msi" SourceFileLength="17448960" />
+          <FileHash Type="SHA256" Data="0x9F47DF3FFAAE29B3C65DAF07575B4E2D29B184C4B7C6C049D84F7FA09427F5E8" SourceFileName="XtremeShell.5.0.Installer.msi" SourceFileLength="77468596" />
+          <FileHash Type="SHA256" Data="0x8667D0B10D176F70D9DF23823CFAA5E1CFF0BFC1F4A0707E34D7039A605A2A51" SourceFileName="XtremeShell.5.1.Installer.msi" SourceFileLength="77685684" />
+          <FileHash Type="SHA256" Data="0x83B790CC3AFA8ACA53AD418A19B4434286E7367706A2000370C52550DAE1CF6E" SourceFileName="XtremeShell.5.2.Installer.msi" SourceFileLength="77673396" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
   </RuleCollection>
   <RuleCollection Type="Script" EnforcementMode="Enabled">
     <FilePublisherRule Id="34c794cd-d3cf-4028-8aa4-c3f9de1a59ab" Name="All Signed" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
@@ -572,11 +749,6 @@
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
       </Conditions>
     </FilePathRule>
-    <FilePathRule Id="8afa897a-a11f-4b61-87af-e45517eb8903" Name="Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
-      </Conditions>
-    </FilePathRule>
     <FilePathRule Id="7db12d15-41b3-42b3-ae96-1e2288db9374" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
         <FilePathCondition Path="C:\Users\*\AppData\Local\Temp\*" />
@@ -587,5 +759,42 @@
         </FilePublisherCondition>
       </Exceptions>
     </FilePathRule>
+    <FilePathRule Id="8afa897a-a11f-4b61-87af-e45517eb8903" Name="Excepcions" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="9d1c924e-ce3e-404c-aabd-1cd04bdbf0a5" Name="Allow Razer1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Razer\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="f2fd2fd0-3159-4f22-95cf-ea861f9e5b31" Name="Allow Razer2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Razer\*" />
+      </Conditions>
+    </FilePathRule>
+    <FileHashRule Id="e524e3e7-50a5-4cb6-a44b-e32fa841b4e3" Name="Allow github.com/slevente713 Powershell scripts" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x657D262584E9C73362F58E4431E3AB3B4EDAC9ADAD542E002D003B5787A994B6" SourceFileName="DisableAutoPlay.ps1" SourceFileLength="483" />
+          <FileHash Type="SHA256" Data="0xEB710DB81AE5165EA8139FEAA4DCCD8AFC8D4567BBA5CCFC5FEA366BA63555F7" SourceFileName="DisableMSEdgeTelementryAndAds.ps1" SourceFileLength="789" />
+          <FileHash Type="SHA256" Data="0x28EA6CBEA290E602FC7AA7FBEEA592EDA59366996D966334D2715C9B6627085B" SourceFileName="DisableNetBiosAndLlmnr.ps1" SourceFileLength="909" />
+          <FileHash Type="SHA256" Data="0xD8A3260D87F646D3D728472BA0C6BAF2061EDAC282B1B91465E3F9443897124D" SourceFileName="DisableRDP.ps1" SourceFileLength="231" />
+          <FileHash Type="SHA256" Data="0x7CCE99AAC3D054C5522F6E457D18F532A4DA1E409A118B35F60109EBB682DB20" SourceFileName="DisableRecall.ps1" SourceFileLength="1321" />
+          <FileHash Type="SHA256" Data="0x6DA166553AAC886AA1C1D70FCA5329A2A1BFD549283534D41EB36E32968D9B90" SourceFileName="DisableSendingOpcionalDiagnosticDataAndAds.ps1" SourceFileLength="5751" />
+          <FileHash Type="SHA256" Data="0xD8CF34680FDFC0316B4A60F45C902BA96E00839CD3E6A17AED836DBFE83E43A9" SourceFileName="DisableSMBv1Protocol.ps1" SourceFileLength="76" />
+          <FileHash Type="SHA256" Data="0x6AC320238B10137EF6FB3CF51C9D0585CBEE2E84FEC7EBDCC6BA4DF6910C00F7" SourceFileName="DisableUploadingClipboardHistoryToCloud.ps1" SourceFileLength="564" />
+          <FileHash Type="SHA256" Data="0xC37D30A004E2F85286689867EBE9B934934A9A4E5DEB55F985CF0B17D74EE01A" SourceFileName="EnableCoreIsolation(VBS).ps1" SourceFileLength="810" />
+          <FileHash Type="SHA256" Data="0x036F70FE784B08165E03D233D88409271F4261E1166435580D28E979BA95F3BE" SourceFileName="EnableWindowsDefenderFirewallOnAllProfiles.ps1" SourceFileLength="351" />
+          <FileHash Type="SHA256" Data="0xDEE049E2F02547022803C72551309F553717112A468491401745472D9A82AFE9" SourceFileName="EnableWindowsSecurityRealTimeProtection.ps1" SourceFileLength="432" />
+          <FileHash Type="SHA256" Data="0x596F98AC79C309B9FA913EF101DED82617A6ADECF3ECC564E9416933E58BB430" SourceFileName="RemovePowershell2.ps1" SourceFileLength="1557" />
+          <FileHash Type="SHA256" Data="0x7C995890D0463FAFC6901E83553ECB873F61DF0C617DD82876057DC590A97CF2" SourceFileName="TurnOnCoreIsolationWithMemoryIntegrity(HVCI).ps1" SourceFileLength="640" />
+          <FileHash Type="SHA256" Data="0xB9BCABDE4CBAF2AA0DC794519A1BD0255C7E1F4F2126502FBB62A0900A7F6598" SourceFileName="Copilot uninstaller.ps1" SourceFileLength="1716" />
+          <FileHash Type="SHA256" Data="0x442F7221181ACB2AA43DD528660EE9D8F7ADF63576AB53DFDAAE788B808831CF" SourceFileName="DeleteTemporaryFiles.ps1" SourceFileLength="1786" />
+          <FileHash Type="SHA256" Data="0xA3F3AE619AF82E0AA712882CD12B2799E399073F8B7A0FDF28304CD539CF8432" SourceFileName="Debloater Lite.ps1" SourceFileLength="11425" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
   </RuleCollection>
 </AppLockerPolicy>
