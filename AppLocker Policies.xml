@@ -25,7 +25,7 @@
     </FilePublisherRule>
     <FilePathRule Id="11dd6977-81d4-42e4-9e2c-2f8509192591" Name="Allow VSCodium5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode\*\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode\*\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="3e110d28-dbde-47f7-b0ae-c44b52b11b38" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing.&#xA;---&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -40,22 +40,22 @@
     </FilePathRule>
     <FilePathRule Id="882ef5ec-bcb0-4916-aaa3-704ed5e7ab96" Name="Allow VSCodium1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*" />
+        <FilePathCondition Path="C:\Users\*\AppData\Roaming\VSCodium\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="8e77d241-dfc3-4fbe-b9ba-46bf23982e04" Name="Allow VSCodium5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="96a40a80-dd18-4733-af8e-d0272277fc31" Name="Allow VSCodium2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*\*" />
+        <FilePathCondition Path="C:\Users\*\AppData\Roaming\VSCodium\*\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="b3bd3cf7-92b6-4ea9-87bf-528112647501" Name="Allow VSCodium3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode-oss\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode-oss\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="bac4b0bf-6f1b-40e8-8627-8545fa89c8b6" Name="(Default Rule) Microsoft Windows DLLs" Description="Allows members of the Everyone group to load DLLs located in the Windows folder." UserOrGroupSid="S-1-1-0" Action="Allow">
@@ -65,7 +65,7 @@
     </FilePathRule>
     <FilePathRule Id="dafd6e90-d8f1-4456-8c93-bcd0d62aa788" Name="Allow VSCodium4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode-oss\*\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode-oss\*\*" />
       </Conditions>
     </FilePathRule>
     <FileHashRule Id="395c5f13-1cd8-42c7-ab58-acb370bcb67d" Name="Enable Explorer Patcher DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
@@ -400,7 +400,7 @@
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
         <FilePathCondition Path="C:\Program Files\PowerShell\*" />
         <FilePathCondition Path="C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe\*" />
-        <FilePathCondition Path="C:\Users\saril\AppData\Local\Microsoft\WindowsApps\*" />
+        <FilePathCondition Path="C:\Users\*\AppData\Local\Microsoft\WindowsApps\*" />
       </Exceptions>
     </FilePublisherRule>
     <FilePublisherRule Id="2febde46-b64c-4daf-be9b-1c3f71d5c55b" Name="Block Powershell ISE Outside Original Paths" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -442,7 +442,7 @@
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
         <FilePathCondition Path="C:\Program Files\PowerShell\*" />
         <FilePathCondition Path="C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe\*" />
-        <FilePathCondition Path="C:\Users\*l\AppData\Local\Microsoft\WindowsApps\*" />
+        <FilePathCondition Path="C:\Users\*\AppData\Local\Microsoft\WindowsApps\*" />
       </Exceptions>
     </FilePublisherRule>
     <FilePublisherRule Id="d32cc361-8151-41bb-9042-d150851d9d3a" Name="Block Process Hacker Publisher" Description="Legitimate software but sometimes used and abused by malware." UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -465,7 +465,7 @@
     </FilePublisherRule>
     <FilePathRule Id="229032a3-a6c6-4ed2-9099-85c1b2616a21" Name="Allow VSCodium6" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*\*" />
+        <FilePathCondition Path="C:\Users\*\AppData\Roaming\VSCodium\*\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="2acf4e9c-e213-49e6-857c-6b32e436696e" Name="Block *.com With Publisher Exceptions" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -483,7 +483,7 @@
     </FilePathRule>
     <FilePathRule Id="393da230-eb69-442a-a889-e67f8f160ba0" Name="Allow VSCodium1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="602bf8c2-2a4f-4009-8cae-94894c9f05ef" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -503,12 +503,12 @@
     </FilePathRule>
     <FilePathRule Id="65de3e73-e024-45ae-9a2b-0186dfcce153" Name="Allow VSCodium5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*" />
+        <FilePathCondition Path="C:\Users\*\AppData\Roaming\VSCodium\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="73872375-4ce5-4846-b13a-dac3a25297c0" Name="Allow VSCodium2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode\*\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode\*\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="7d07c5e9-1610-4b28-9514-b4a95ca69538" Name="Allow Winaero Tweaker2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
@@ -523,7 +523,7 @@
     </FilePathRule>
     <FilePathRule Id="d120a2ac-fc94-4b32-909a-072480b2ca24" Name="Allow VSCodium4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode-oss\*\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode-oss\*\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="de3538f3-6ed7-4dd0-883f-1f1dcdb034c7" Name="Disable all MSDOS (.dos) Files" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -533,7 +533,7 @@
     </FilePathRule>
     <FilePathRule Id="e8f1eee4-ba78-4842-9700-15b4c6e5adf9" Name="Allow VSCodium3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode-oss\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode-oss\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="f17d0669-60ab-47ad-b7a4-8a4cec55a7ea" Name="Allow Winaero Tweaker1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
