@@ -25,7 +25,17 @@
     </FilePublisherRule>
     <FilePathRule Id="11dd6977-81d4-42e4-9e2c-2f8509192591" Name="Allow VSCodium5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode\*\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="133a1709-d8ab-41b7-84a3-5df0699218a2" Name="Allow Razer1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Razer\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="2463dfa7-9926-46ec-8024-22a1f6ff0a24" Name="Allow WinAero Tweaker1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Winaero Tweaker\*\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="3e110d28-dbde-47f7-b0ae-c44b52b11b38" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing.&#xA;---&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -38,62 +48,9 @@
         </FilePublisherCondition>
       </Exceptions>
     </FilePathRule>
-    <FilePathRule Id="882ef5ec-bcb0-4916-aaa3-704ed5e7ab96" Name="Allow VSCodium1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FilePathRule Id="61c2494a-dbce-4370-99bb-8f398a9c0e30" Name="Allow WinAero Tweaker2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="C:\Users\*\AppData\Roaming\VSCodium\*" />
-      </Conditions>
-    </FilePathRule>
-    <FilePathRule Id="8e77d241-dfc3-4fbe-b9ba-46bf23982e04" Name="Allow VSCodium5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode\*" />
-      </Conditions>
-    </FilePathRule>
-    <FilePathRule Id="96a40a80-dd18-4733-af8e-d0272277fc31" Name="Allow VSCodium2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="C:\Users\*\AppData\Roaming\VSCodium\*\*" />
-      </Conditions>
-    </FilePathRule>
-    <FilePathRule Id="b3bd3cf7-92b6-4ea9-87bf-528112647501" Name="Allow VSCodium3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode-oss\*" />
-      </Conditions>
-    </FilePathRule>
-    <FilePathRule Id="bac4b0bf-6f1b-40e8-8627-8545fa89c8b6" Name="(Default Rule) Microsoft Windows DLLs" Description="Allows members of the Everyone group to load DLLs located in the Windows folder." UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="%WINDIR%\*" />
-      </Conditions>
-    </FilePathRule>
-    <FilePathRule Id="dafd6e90-d8f1-4456-8c93-bcd0d62aa788" Name="Allow VSCodium4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode-oss\*\*" />
-      </Conditions>
-    </FilePathRule>
-    <FileHashRule Id="395c5f13-1cd8-42c7-ab58-acb370bcb67d" Name="Enable Explorer Patcher DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FileHashCondition>
-          <FileHash Type="SHA256" Data="0xBC8C9383B8F1D92C6E97340D13DDB715091F9B85EAE6F7A5CCF9A4A36F51A60A" SourceFileName="ep_gui.dll" SourceFileLength="815104" />
-          <FileHash Type="SHA256" Data="0xB7FE27D20FD83EF3FC1146B1776A8FA21AF548216EE1691FEB464DD4AB033442" SourceFileName="ep_taskbar.5.dll" SourceFileLength="2476544" />
-          <FileHash Type="SHA256" Data="0x1A96A7FB0CBE44C4D7F67C7241209DF28FB67F481C19E286A0C623FCAF8B9040" SourceFileName="ep_weather_host.dll" SourceFileLength="248320" />
-          <FileHash Type="SHA256" Data="0x129CB1576E70050C290D5ABBB89302BDC42A51F7A1C5AC6FAF13922DCCF8CDF2" SourceFileName="ep_weather_host_stub.dll" SourceFileLength="109568" />
-          <FileHash Type="SHA256" Data="0xA8105AF907465C811CD89BDCDBB012C96948843C26A59B166BFF32166A3E85FD" SourceFileName="ExplorerPatcher.amd64.dll" SourceFileLength="624640" />
-          <FileHash Type="SHA256" Data="0x183F5B04CF9D53CB0172CF9429B9F3EC9B9CC16F73CB97C13357370E6C89B434" SourceFileName="ExplorerPatcher.IA-32.dll" SourceFileLength="173056" />
-          <FileHash Type="SHA256" Data="0x9BD98D842AC1D8571C8043F3A107A23CE80A8E2B8DD7466F827346F33B642CDF" SourceFileName="pnidui.dll" SourceFileLength="2138112" />
-          <FileHash Type="SHA256" Data="0x671C69C3C77CB5E0E551B664DCD2B5E03FA2E45BFA204DFFF5787A168508F5D5" SourceFileName="WebView2Loader.dll" SourceFileLength="159336" />
-        </FileHashCondition>
-      </Conditions>
-    </FileHashRule>
-    <FileHashRule Id="dcde5cf2-7626-46f3-84da-30ed718d07e1" Name="Enable 7zip DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FileHashCondition>
-          <FileHash Type="SHA256" Data="0x556A204CA48BE5B1E8E1D01A199B50EDCA672B94D1645A97E26DBB58BE754083" SourceFileName="7z.dll" SourceFileLength="1908736" />
-          <FileHash Type="SHA256" Data="0xFBB5792627DF333444311A36E697AC54F79B86671460AAB24C48ED565ED62DF0" SourceFileName="7-zip.dll" SourceFileLength="101888" />
-          <FileHash Type="SHA256" Data="0x9E5F6FFCD923B2B66C24967D26A7411D08F34616C59DA6707CD2890ED4BD0479" SourceFileName="7-zip32.dll" SourceFileLength="67584" />
-        </FileHashCondition>
-      </Conditions>
-    </FileHashRule>
-    <FilePathRule Id="133a1709-d8ab-41b7-84a3-5df0699218a2" Name="Allow Razer1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="%PROGRAMFILES%\Razer\*\*" />
+        <FilePathCondition Path="%PROGRAMFILES%\Winaero Tweaker\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="72cd71a5-fdc1-4a29-9096-e448f21f20b3" Name="Allow Razer2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
@@ -101,14 +58,39 @@
         <FilePathCondition Path="%PROGRAMFILES%\Razer\*" />
       </Conditions>
     </FilePathRule>
+    <FilePathRule Id="882ef5ec-bcb0-4916-aaa3-704ed5e7ab96" Name="Allow VSCodium1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*" />
+      </Conditions>
+    </FilePathRule>
     <FilePathRule Id="933704d0-a3f0-4e8e-9c97-42012b12d4bf" Name="Allow Razer3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FilePathCondition Path="C:\Program Files\Razer\RazerAppEngine\app-4.0.662\resources\*" />
       </Conditions>
     </FilePathRule>
+    <FilePathRule Id="96a40a80-dd18-4733-af8e-d0272277fc31" Name="Allow VSCodium2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="b3bd3cf7-92b6-4ea9-87bf-528112647501" Name="Allow VSCodium3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode-oss\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="bac4b0bf-6f1b-40e8-8627-8545fa89c8b6" Name="(Default Rule) Microsoft Windows DLLs" Description="Allows members of the Everyone group to load DLLs located in the Windows folder." UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\*" />
+      </Conditions>
+    </FilePathRule>
     <FilePathRule Id="c15f23f9-5ad7-41f0-942c-8031e43bce7b" Name="Allow Razer4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FilePathCondition Path="C:\Program Files\Razer\RazerAppEngine\app-4.0.662\resources\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="dafd6e90-d8f1-4456-8c93-bcd0d62aa788" Name="Allow VSCodium4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode-oss\*\*" />
       </Conditions>
     </FilePathRule>
     <FileHashRule Id="1c1f9c30-678b-43f4-9af5-18fd959014a0" Name="Allow Xtremeshell 5.2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
@@ -377,14 +359,62 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FilePathRule Id="2463dfa7-9926-46ec-8024-22a1f6ff0a24" Name="Allow WinAero Tweaker1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FileHashRule Id="395c5f13-1cd8-42c7-ab58-acb370bcb67d" Name="Enable Explorer Patcher DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%PROGRAMFILES%\Winaero Tweaker\*\*" />
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0xBC8C9383B8F1D92C6E97340D13DDB715091F9B85EAE6F7A5CCF9A4A36F51A60A" SourceFileName="ep_gui.dll" SourceFileLength="815104" />
+          <FileHash Type="SHA256" Data="0xB7FE27D20FD83EF3FC1146B1776A8FA21AF548216EE1691FEB464DD4AB033442" SourceFileName="ep_taskbar.5.dll" SourceFileLength="2476544" />
+          <FileHash Type="SHA256" Data="0x1A96A7FB0CBE44C4D7F67C7241209DF28FB67F481C19E286A0C623FCAF8B9040" SourceFileName="ep_weather_host.dll" SourceFileLength="248320" />
+          <FileHash Type="SHA256" Data="0x129CB1576E70050C290D5ABBB89302BDC42A51F7A1C5AC6FAF13922DCCF8CDF2" SourceFileName="ep_weather_host_stub.dll" SourceFileLength="109568" />
+          <FileHash Type="SHA256" Data="0xA8105AF907465C811CD89BDCDBB012C96948843C26A59B166BFF32166A3E85FD" SourceFileName="ExplorerPatcher.amd64.dll" SourceFileLength="624640" />
+          <FileHash Type="SHA256" Data="0x183F5B04CF9D53CB0172CF9429B9F3EC9B9CC16F73CB97C13357370E6C89B434" SourceFileName="ExplorerPatcher.IA-32.dll" SourceFileLength="173056" />
+          <FileHash Type="SHA256" Data="0x9BD98D842AC1D8571C8043F3A107A23CE80A8E2B8DD7466F827346F33B642CDF" SourceFileName="pnidui.dll" SourceFileLength="2138112" />
+          <FileHash Type="SHA256" Data="0x671C69C3C77CB5E0E551B664DCD2B5E03FA2E45BFA204DFFF5787A168508F5D5" SourceFileName="WebView2Loader.dll" SourceFileLength="159336" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="dcde5cf2-7626-46f3-84da-30ed718d07e1" Name="Enable 7zip DLLs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x556A204CA48BE5B1E8E1D01A199B50EDCA672B94D1645A97E26DBB58BE754083" SourceFileName="7z.dll" SourceFileLength="1908736" />
+          <FileHash Type="SHA256" Data="0xFBB5792627DF333444311A36E697AC54F79B86671460AAB24C48ED565ED62DF0" SourceFileName="7-zip.dll" SourceFileLength="101888" />
+          <FileHash Type="SHA256" Data="0x9E5F6FFCD923B2B66C24967D26A7411D08F34616C59DA6707CD2890ED4BD0479" SourceFileName="7-zip32.dll" SourceFileLength="67584" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FilePathRule Id="95b6e702-f153-4b1a-905c-f200d5b8ca1b" Name="Allow VSCodium6" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\VSCodium\*" />
       </Conditions>
     </FilePathRule>
-    <FilePathRule Id="61c2494a-dbce-4370-99bb-8f398a9c0e30" Name="Allow WinAero Tweaker2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FilePathRule Id="2647bd06-3c31-41b5-8121-181295d537cf" Name="Allow VScodium7" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%PROGRAMFILES%\Winaero Tweaker\*" />
+        <FilePathCondition Path="%PROGRAMFILES%\VSCodium\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="1130b392-931a-482c-9f01-b67927eb4981" Name="Allow VSCodium8" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\.vscode\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="d8dd77ab-5853-4146-bb20-903e42ea0eee" Name="Allow VSCodium9" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\.vscode\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="8e77d241-dfc3-4fbe-b9ba-46bf23982e04" Name="Allow VSCodium10" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="75eeea5d-3bdc-498c-895e-1271a078a272" Name="Allow VSCodium11" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="f0bc0e56-39cd-4168-ad2d-04cd04d12f22" Name="Allow VSCodium12" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*\*" />
       </Conditions>
     </FilePathRule>
   </RuleCollection>
@@ -400,7 +430,7 @@
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
         <FilePathCondition Path="C:\Program Files\PowerShell\*" />
         <FilePathCondition Path="C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe\*" />
-        <FilePathCondition Path="C:\Users\*\AppData\Local\Microsoft\WindowsApps\*" />
+        <FilePathCondition Path="C:\Users\saril\AppData\Local\Microsoft\WindowsApps\*" />
       </Exceptions>
     </FilePublisherRule>
     <FilePublisherRule Id="2febde46-b64c-4daf-be9b-1c3f71d5c55b" Name="Block Powershell ISE Outside Original Paths" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -442,8 +472,15 @@
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
         <FilePathCondition Path="C:\Program Files\PowerShell\*" />
         <FilePathCondition Path="C:\Program Files\WindowsApps\Microsoft.PowerShell_7.3.6.0_x64__8wekyb3d8bbwe\*" />
-        <FilePathCondition Path="C:\Users\*\AppData\Local\Microsoft\WindowsApps\*" />
+        <FilePathCondition Path="C:\Users\*l\AppData\Local\Microsoft\WindowsApps\*" />
       </Exceptions>
+    </FilePublisherRule>
+    <FilePublisherRule Id="b50e16ae-d4c7-442a-8263-c0c53efbbe95" Name="Allow Razer1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=RAZER USA LTD., L=IRVINE, S=CALIFORNIA, C=US" ProductName="*" BinaryName="*">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
     </FilePublisherRule>
     <FilePublisherRule Id="d32cc361-8151-41bb-9042-d150851d9d3a" Name="Block Process Hacker Publisher" Description="Legitimate software but sometimes used and abused by malware." UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
@@ -463,9 +500,14 @@
         <FilePathCondition Path="%OSDRIVE%\AppLockerExcepcions\*\*" />
       </Exceptions>
     </FilePublisherRule>
+    <FilePathRule Id="0027fe6b-3782-4f15-a8b3-acf8df9e380c" Name="Allow Razer2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Razer\*" />
+      </Conditions>
+    </FilePathRule>
     <FilePathRule Id="229032a3-a6c6-4ed2-9099-85c1b2616a21" Name="Allow VSCodium6" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="C:\Users\*\AppData\Roaming\VSCodium\*\*" />
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="2acf4e9c-e213-49e6-857c-6b32e436696e" Name="Block *.com With Publisher Exceptions" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -481,9 +523,14 @@
         </FilePublisherCondition>
       </Exceptions>
     </FilePathRule>
+    <FilePathRule Id="2c16b9d0-9fbf-4065-a5f9-61388f842aa7" Name="Allow Razer3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Program Files\Razer\RazerAppEngine\app-4.0.662\resources\*\*" />
+      </Conditions>
+    </FilePathRule>
     <FilePathRule Id="393da230-eb69-442a-a889-e67f8f160ba0" Name="Allow VSCodium1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="602bf8c2-2a4f-4009-8cae-94894c9f05ef" Name="[TOGGLE TEMPORARY] Allow Everything in AppData Local" Description="--- Always remember to change it back to Deny after finishing. ---&#xA;&#xA;An exception is added for signed files so that even when this is set to Deny, it will not override the rule to allow signed files." UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -503,17 +550,22 @@
     </FilePathRule>
     <FilePathRule Id="65de3e73-e024-45ae-9a2b-0186dfcce153" Name="Allow VSCodium5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="C:\Users\*\AppData\Roaming\VSCodium\*" />
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="73872375-4ce5-4846-b13a-dac3a25297c0" Name="Allow VSCodium2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode\*\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode\*\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="7d07c5e9-1610-4b28-9514-b4a95ca69538" Name="Allow Winaero Tweaker2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FilePathCondition Path="%PROGRAMFILES%\Winaero Tweaker\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="8f91c2be-2c1e-46c9-81bf-7b75db8965de" Name="Allow Razer4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\Razer\*\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="b15c8ac6-0746-419e-a28e-13a5eb2d59d1" Name="Block All .scr" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -523,7 +575,7 @@
     </FilePathRule>
     <FilePathRule Id="d120a2ac-fc94-4b32-909a-072480b2ca24" Name="Allow VSCodium4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode-oss\*\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode-oss\*\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="de3538f3-6ed7-4dd0-883f-1f1dcdb034c7" Name="Disable all MSDOS (.dos) Files" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
@@ -531,9 +583,14 @@
         <FilePathCondition Path="*.dos" />
       </Conditions>
     </FilePathRule>
+    <FilePathRule Id="e2c5da30-aaf7-47e4-b40a-258e4a6864ab" Name="Allow Razer5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Program Files\Razer\RazerAppEngine\app-4.0.662\resources" />
+      </Conditions>
+    </FilePathRule>
     <FilePathRule Id="e8f1eee4-ba78-4842-9700-15b4c6e5adf9" Name="Allow VSCodium3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
-        <FilePathCondition Path="%OSDRIVE%\Users\*\.vscode-oss\*" />
+        <FilePathCondition Path="%OSDRIVE%\Users\saril\.vscode-oss\*" />
       </Conditions>
     </FilePathRule>
     <FilePathRule Id="f17d0669-60ab-47ad-b7a4-8a4cec55a7ea" Name="Allow Winaero Tweaker1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
@@ -578,50 +635,14 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FileHashRule Id="80e8a68e-23ba-4d61-83cf-b7ea52ef3990" Name="Allow VSCodium installer" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+    <FileHashRule Id="36c797ca-1f1c-4b38-aa9c-20baedea2c51" Name="Allow Explorer Patcher" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FileHashCondition>
-          <FileHash Type="SHA256" Data="0x5BE5477FD2CA4F8B646164AC630EB584105E97D14674B72BE049A667C62B9087" SourceFileName="VSCodiumUserSetup-x64-1.116.02821.exe" SourceFileLength="132878232" />
+          <FileHash Type="SHA256" Data="0x1D2D083DBEB8A8C6694DA9D917A6E6A19B35D96F5139E463F3B2CCAB76BEB3C7" SourceFileName="ep_dwm_svc.exe" SourceFileLength="115200" />
+          <FileHash Type="SHA256" Data="0x2018E94D75D941E1DD7D2B7F35A18B106EDFDA2E5FC9AB45BE43C21F53F4FF29" SourceFileName="ep_setup.exe" SourceFileLength="12009984" />
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
-    <FileHashRule Id="a783657f-8d56-4d8f-80e2-998ce8e8bb3f" Name="Enable 7zip" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FileHashCondition>
-          <FileHash Type="SHA256" Data="0xF3053B0E84CD93BCFB9FA21C516E513B12EAAD3D4713E429AC7834B97EBA5605" SourceFileName="7z.exe" SourceFileLength="576512" />
-          <FileHash Type="SHA256" Data="0x27DCFB31E72EDC4C40FB9297DF9296094FE204CE47C5855B3442037E2DCF2FA9" SourceFileName="7zFM.exe" SourceFileLength="999424" />
-          <FileHash Type="SHA256" Data="0x90E5C86AF5EFBB5FC3A8278FFB6E077CE0F9B1711B001B3063C07899EDF998F5" SourceFileName="7zG.exe" SourceFileLength="723968" />
-          <FileHash Type="SHA256" Data="0xB1F2BD738FEDEB2608903E07CE86175936442002992E7A2F73C876FBFCD1C5EE" SourceFileName="Uninstall.exe" SourceFileLength="17408" />
-        </FileHashCondition>
-      </Conditions>
-    </FileHashRule>
-    <FilePublisherRule Id="b50e16ae-d4c7-442a-8263-c0c53efbbe95" Name="Allow Razer1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePublisherCondition PublisherName="O=RAZER USA LTD., L=IRVINE, S=CALIFORNIA, C=US" ProductName="*" BinaryName="*">
-          <BinaryVersionRange LowSection="*" HighSection="*" />
-        </FilePublisherCondition>
-      </Conditions>
-    </FilePublisherRule>
-    <FilePathRule Id="0027fe6b-3782-4f15-a8b3-acf8df9e380c" Name="Allow Razer2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="%PROGRAMFILES%\Razer\*" />
-      </Conditions>
-    </FilePathRule>
-    <FilePathRule Id="2c16b9d0-9fbf-4065-a5f9-61388f842aa7" Name="Allow Razer3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="C:\Program Files\Razer\RazerAppEngine\app-4.0.662\resources\*\*" />
-      </Conditions>
-    </FilePathRule>
-    <FilePathRule Id="8f91c2be-2c1e-46c9-81bf-7b75db8965de" Name="Allow Razer4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="%PROGRAMFILES%\Razer\*\*" />
-      </Conditions>
-    </FilePathRule>
-    <FilePathRule Id="e2c5da30-aaf7-47e4-b40a-258e4a6864ab" Name="Allow Razer5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FilePathCondition Path="C:\Program Files\Razer\RazerAppEngine\app-4.0.662\resources" />
-      </Conditions>
-    </FilePathRule>
     <FileHashRule Id="39c48803-99b2-4802-8b26-b59643c176ff" Name="Allow Razer6" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
       <Conditions>
         <FileHashCondition>
@@ -635,21 +656,6 @@
           <FileHash Type="SHA256" Data="0x12E77EFC4BBFC7D5C3C7B30B9E77C3B1B918216760F399803673AEFAF4DDF60B" SourceFileName="RzPowerTool.exe" SourceFileLength="1052296" />
           <FileHash Type="SHA256" Data="0x83CE543B50AC7F05D677AFC0B24A9D81AE036C36A2C853D5E18D98CCB8853AE6" SourceFileName="RzSecurityTool.exe" SourceFileLength="856264" />
           <FileHash Type="SHA256" Data="0xD1427897A0C36054661E55B8E5FEE478BC06223F4D2E32826ADB4E496F350F34" SourceFileName="Uninstall.exe" SourceFileLength="58384" />
-        </FileHashCondition>
-      </Conditions>
-    </FileHashRule>
-    <FileHashRule Id="d5f50be0-f981-4a53-8eed-071f96075557" Name="Allow WinAero Tweaker installer" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FileHashCondition>
-          <FileHash Type="SHA256" Data="0xEEB53CB151B224A30674DD276515B4694F7FE3F68ABBD1A0DEA0A8FE392A9F73" SourceFileName="WinaeroTweaker-1.65.0.0-setup.exe" SourceFileLength="6108658" />
-        </FileHashCondition>
-      </Conditions>
-    </FileHashRule>
-    <FileHashRule Id="36c797ca-1f1c-4b38-aa9c-20baedea2c51" Name="Allow Explorer Patcher" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
-      <Conditions>
-        <FileHashCondition>
-          <FileHash Type="SHA256" Data="0x1D2D083DBEB8A8C6694DA9D917A6E6A19B35D96F5139E463F3B2CCAB76BEB3C7" SourceFileName="ep_dwm_svc.exe" SourceFileLength="115200" />
-          <FileHash Type="SHA256" Data="0x2018E94D75D941E1DD7D2B7F35A18B106EDFDA2E5FC9AB45BE43C21F53F4FF29" SourceFileName="ep_setup.exe" SourceFileLength="12009984" />
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
@@ -674,6 +680,145 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
+    <FileHashRule Id="90081ce7-6ab2-45ea-ab9c-aba02775fd04" Name="Start" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x27DCFB31E72EDC4C40FB9297DF9296094FE204CE47C5855B3442037E2DCF2FA9" SourceFileName="7zFM.exe" SourceFileLength="999424" />
+          <FileHash Type="SHA256" Data="0x0AC5578DCEC0CE35FABDC003A20CCAC65F1FCCF51FB390F4E0EECD555EE578B0" SourceFileName="rundll32.exe" SourceFileLength="98304" />
+          <FileHash Type="SHA256" Data="0xA83346893E4F4F347770CA01AC2BD819721EA772BEE3C551C6FA48BDF99222D1" SourceFileName="javacpl.exe" SourceFileLength="107704" />
+          <FileHash Type="SHA256" Data="0xAC532600FC7B8F7E6C6D51F117DF331032C5503F5C9FF24DE67C6BD87A9E7D97" SourceFileName="Get Help.url" SourceFileLength="182" />
+          <FileHash Type="SHA256" Data="0x50F88AE38DC90B4E1C8481C662E22E4C642C130C1AF506F0402331F5FF1B535B" SourceFileName="Visit Java.com.url" SourceFileLength="178" />
+          <FileHash Type="SHA256" Data="0x0492847E5A979006488285E55BD5EDEAED6892E21577831B176EA53D9842DEC9" SourceFileName="Reference Documentation.url" SourceFileLength="197" />
+          <FileHash Type="SHA256" Data="0xCB2FB82EAB79ACAE89EA62D51AA181B49FF6F0666602383C8235915B8344E84B" SourceFileName="LibreWolf-WinUpdater.exe" SourceFileLength="888480" />
+          <FileHash Type="SHA256" Data="0xF17D66B5EBAC5541D5EBAE4BD37A9D6E2A4F8022B9D5B473F04241FFFC42C30E" SourceFileName="librewolf.exe" SourceFileLength="528536" />
+          <FileHash Type="SHA256" Data="0xF763C48B17E252CB4EDC314A6D6FF67BA326DFC1838D44394CC4B3B6BD2F1240" SourceFileName="SETLANG.EXE" SourceFileLength="87368" />
+          <FileHash Type="SHA256" Data="0x6119E5EE4079691D9217C10BFA9C599B10A852FA022F86E3931013550473AD6D" SourceFileName="XtremeShell.exe" SourceFileLength="349696" />
+          <FileHash Type="SHA256" Data="0x6345592DC0384C572428467230D573CD548EAB778F834057E1E57317F470A4D0" SourceFileName="pwsh.exe" SourceFileLength="301600" />
+          <FileHash Type="SHA256" Data="0x4E9038578AE0CE35187570A6896419B3D85A0FCF17D81C3F3878C0899FA1BCDC" SourceFileName="RazerAppEngine.exe" SourceFileLength="853640" />
+          <FileHash Type="SHA256" Data="0xDD1FD179E29F6E68371C78A2C2E1C4DA61C00BE358D54B92C868B8F85D509BD7" SourceFileName="Revo Uninstaller a weben.url" SourceFileLength="58" />
+          <FileHash Type="SHA256" Data="0x88F5EA4E23A77B8B5F95C1CCEA487BAC935C7E71E1EFF3292C985483582B2740" SourceFileName="unins000.exe" SourceFileLength="1351016" />
+          <FileHash Type="SHA256" Data="0x69BAA2F940DC52981B835BFB11B2EBD6ADF681F9F1ABD97BD62D605FEEF31B6F" SourceFileName="RevoUnin.exe" SourceFileLength="21853984" />
+          <FileHash Type="SHA256" Data="0xABED19A4E3F1D7A6FBD713F0CCB93BEC84E1DA43F36C1E8E63301F71E2F112C2" SourceFileName="vlc.exe" SourceFileLength="1046424" />
+          <FileHash Type="SHA256" Data="0x04B201952048315CFB0FE8361E4DAD6BD086FFAEA8C11D98FB5955A9FDA1BDC8" SourceFileName="WinaeroTweaker.exe" SourceFileLength="5590016" />
+          <FileHash Type="SHA256" Data="0xB1C4500BE3747F3918456053E595D28CAE0BBCF7CC5DDF8D1488368EE9CED521" SourceFileName="mstsc.exe" SourceFileLength="1384448" />
+          <FileHash Type="SHA256" Data="0xA52EC065931DA940C40F0CF7C96A5BA4A78DA7B9161754CC3255FD76EABAE5F7" SourceFileName="psr.exe" SourceFileLength="397312" />
+          <FileHash Type="SHA256" Data="0x38D75CA9C758362198CF7EDCEA5AF9280D36EAA0AEE29C7F51C37E5019F88CE6" SourceFileName="wmplayer.exe" SourceFileLength="167936" />
+          <FileHash Type="SHA256" Data="0x7E9A1003C98F679DDE7345C5CFB48AB299BA2FB92B40A3E8052B3EC77C814823" SourceFileName="xpsrchvw.exe" SourceFileLength="3690496" />
+          <FileHash Type="SHA256" Data="0x61D35FF67540821EE2926E9AB1637975A54AF053393D2B4E64CD4228D819EE81" SourceFileName="charmap.exe" SourceFileLength="286720" />
+          <FileHash Type="SHA256" Data="0x7FF58AB43017DEF4EB174FA22FB3EE246D851E3D92B187700027EDD2ACB17086" SourceFileName="PowerShell_ISE.exe" SourceFileLength="213504" />
+          <FileHash Type="SHA256" Data="0xF243250329BAF6B89D67F4F0295E1422FE456942D43C6B38C1623927386A93A1" SourceFileName="PowerShell_ISE.exe" SourceFileLength="212992" />
+          <FileHash Type="SHA256" Data="0x6A7FBADB8EB40F87A82816E766F1041C7653223BB21F9FC9B791142D4F80DDBF" SourceFileName="taskmgr.exe" SourceFileLength="5621104" />
+          <FileHash Type="SHA256" Data="0x8F619C7870E1D60A3EE9DD6419AAFB38AFDD462EA928CE0124438FED8F985785" SourceFileName="dfrgui.exe" SourceFileLength="172032" />
+          <FileHash Type="SHA256" Data="0x8A8429CB1295844A9E733D34F6FA027A57E6247A23A236A519F991BB65A2043A" SourceFileName="cleanmgr.exe" SourceFileLength="331776" />
+          <FileHash Type="SHA256" Data="0x26995582B76120A2917A76D81E44F5A347517E0FDB4C91B3934353C2757C0CBC" SourceFileName="iscsicpl.exe" SourceFileLength="32768" />
+          <FileHash Type="SHA256" Data="0xCC479375C30E5B3DB4B9EB79198E23B23C8FF19BA5DA20A8C833332DDB061F23" SourceFileName="odbcad32.exe" SourceFileLength="72704" />
+          <FileHash Type="SHA256" Data="0x33CB6DB6424C6D2EA6B153C9A4C016195A9A98133482708004F90DA2AB08DB30" SourceFileName="odbcad32.exe" SourceFileLength="102400" />
+          <FileHash Type="SHA256" Data="0x7B393F45381A24EEC6D68DF0420F00BA09E57C9A8FCF1E5D7DB8916E14C7DB41" SourceFileName="RecoveryDrive.exe" SourceFileLength="356352" />
+          <FileHash Type="SHA256" Data="0x711115701CF776E903DC4CA3631BA4BD1CDD39560091B33CF61C233FF1EF747E" SourceFileName="regedit.exe" SourceFileLength="577536" />
+          <FileHash Type="SHA256" Data="0x9BFF6F2B8F70D66F07A793B2AEA6B0AE563727B185D00966248F827BC1FA5635" SourceFileName="perfmon.exe" SourceFileLength="180224" />
+          <FileHash Type="SHA256" Data="0x6BBD3949E87E24724683F4070BE40B01C2901E78551A8B9CB243D18A7BF5B88F" SourceFileName="msconfig.exe" SourceFileLength="258048" />
+          <FileHash Type="SHA256" Data="0xE0F4F194808CAC06225FA59D13BC2D4D49A26610A3317EF655938A3EF8666C3F" SourceFileName="msinfo32.exe" SourceFileLength="376832" />
+          <FileHash Type="SHA256" Data="0x3124015381C75B4E2D68374E5AA41AC8D58A8D77801035C33C287FA0D2E79CDE" SourceFileName="MdSched.exe" SourceFileLength="155648" />
+          <FileHash Type="SHA256" Data="0xBF23C57B363894B1A0AE42E2F760429D68BA1CEEA6275B402B4459A1A6B5F358" SourceFileName="unins000.exe" SourceFileLength="1188464" />
+          <FileHash Type="SHA256" Data="0xE1D55F60512BF71367E43CCC7E04415DAB86DAC5A6FBD4FD35F8A6589AEB911D" SourceFileName="WizTree64.exe" SourceFileLength="10968176" />
+          <FileHash Type="SHA256" Data="0xC3CD1B5ABF101EE46D447D3E43DC24B2E0C22DFDEA9D37675A22513012DDD8F1" SourceFileName="MSACCESS.EXE" SourceFileLength="20081400" />
+          <FileHash Type="SHA256" Data="0xF8A77E6B11A4F04EAE2F75A57D4736CC4E1907427A0D765A2EA15BD68ED52B74" SourceFileName="EXCEL.EXE" SourceFileLength="75917120" />
+          <FileHash Type="SHA256" Data="0x646D7E13942419781D73D4BD0E7935CA67D8791591C42217AEFACAB3CD8DBF00" SourceFileName="gimp-3.exe" SourceFileLength="7045120" />
+          <FileHash Type="SHA256" Data="0xB64B5A76D716CE5ED5E91FB16B1ED7FD9410BE394BD879F1128C5F56FB491F14" SourceFileName="chrome.exe" SourceFileLength="4249240" />
+          <FileHash Type="SHA256" Data="0x49D3CEAF4FB9E76D1EAC5223815EBE4696AE379110393666B8F3F579981235E7" SourceFileName="index.html" SourceFileLength="8600" />
+          <FileHash Type="SHA256" Data="0x97E4BC9D4AD24C11BA3C0895D5C6BC83D179FB39CE906AF21781664E323692A6" SourceFileName="msedge.exe" SourceFileLength="5216584" />
+          <FileHash Type="SHA256" Data="0xDD2E69EC4F93951B4E5FFB85A48D3B3BC9D603D15F58D4DE2390CC1B1F3F96FB" SourceFileName="notepad.exe" SourceFileLength="360448" />
+          <FileHash Type="SHA256" Data="0x3D8B4FEDB9485F2138560AD0A24FC07CAE3F4C3D1F122D9697A11FFB1E9FCEE6" SourceFileName="notepad++.exe" SourceFileLength="8425984" />
+          <FileHash Type="SHA256" Data="0x6F6711B68B76594446204D9465F79085944DD20715290461353F831909280E03" SourceFileName="obs64.exe" SourceFileLength="5406992" />
+          <FileHash Type="SHA256" Data="0x11C394C594690828CE056F750709FAA40794687A41CA5006BE37B298EA94B48E" SourceFileName="OneDrive.exe" SourceFileLength="4748648" />
+          <FileHash Type="SHA256" Data="0xFFC49DA2271B5CB8650C53AE3EFB52541E65DE285CE4461B8BB8D4633D4D2C01" SourceFileName="ONENOTE.EXE" SourceFileLength="2994936" />
+          <FileHash Type="SHA256" Data="0x55AB7D528B51FB52C82F048D8DB8B34E4A57A168F1D2654F0950BC79DE1E44CD" SourceFileName="OUTLOOK.EXE" SourceFileLength="46056264" />
+          <FileHash Type="SHA256" Data="0x8B90C34DEF107D1FF54F7C7C11409A5D71EC7063D743BFE8150C97DF0AD89D94" SourceFileName="POWERPNT.EXE" SourceFileLength="1778944" />
+          <FileHash Type="SHA256" Data="0x2BAB91A753EA62171A0515B3CC2E8A9D03D5490C9AE8A6C6562681C8073DC38C" SourceFileName="MSPUB.EXE" SourceFileLength="13631232" />
+          <FileHash Type="SHA256" Data="0x69FF08DE013B44F9719711881ABD2730F0BD640BA04326B1F90ABE20EFEE9275" SourceFileName="WINWORD.EXE" SourceFileLength="1563960" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="99ed16e4-c992-4031-ae8f-d7e8b7b59b7f" Name="Allow some NirSoft programs" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0xEA25AF154BA162CAED2FF7EF831BE7081D065DFCF1C9C0BA8D71A4D00DB04F7A" SourceFileName="USBLogView.exe" SourceFileLength="544104" />
+          <FileHash Type="SHA256" Data="0xD613C800F9D7D0B4CAC3AEDDA09475EEDA559377E27EFD7B9250DA7B795E6F90" SourceFileName="shmnview.exe" SourceFileLength="111312" />
+          <FileHash Type="SHA256" Data="0x69382A9255D2D688F973F0931BAA14A3FE0A8A2BF6ACB1B980F502B46CB761E6" SourceFileName="iconsext.exe" SourceFileLength="27136" />
+          <FileHash Type="SHA256" Data="0xF4393C57E3631C427952339990DE1F9F38BC85653541A39EBE0EB8A9ECE99567" SourceFileName="AdvancedRun.exe" SourceFileLength="172408" />
+          <FileHash Type="SHA256" Data="0x6AF02E2CF9D9144ECF8AE122F7D573FB80B0F1C933B1B5DE350DEADFEF97C5D7" SourceFileName="BlueScreenView.exe" SourceFileLength="146528" />
+          <FileHash Type="SHA256" Data="0xDF522E2D6FA6AA7C6E4DB6B0EFE07ABA3816A3547EF56A9F97612A09F0F4FD7B" SourceFileName="cports.exe" SourceFileLength="215552" />
+          <FileHash Type="SHA256" Data="0x86D050E9BB2FEEA92674B934EF8225C843E07FB7D098E5F28EE820F895338C05" SourceFileName="LastActivityView.exe" SourceFileLength="133448" />
+          <FileHash Type="SHA256" Data="0x5C74C5428A0089A603D112C862CF4584320A09D8042F23C58DFF5E36F4762B52" SourceFileName="RunAsDate.exe" SourceFileLength="101704" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="a783657f-8d56-4d8f-80e2-998ce8e8bb3f" Name="Enable 7zip" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0xF3053B0E84CD93BCFB9FA21C516E513B12EAAD3D4713E429AC7834B97EBA5605" SourceFileName="7z.exe" SourceFileLength="576512" />
+          <FileHash Type="SHA256" Data="0x27DCFB31E72EDC4C40FB9297DF9296094FE204CE47C5855B3442037E2DCF2FA9" SourceFileName="7zFM.exe" SourceFileLength="999424" />
+          <FileHash Type="SHA256" Data="0x90E5C86AF5EFBB5FC3A8278FFB6E077CE0F9B1711B001B3063C07899EDF998F5" SourceFileName="7zG.exe" SourceFileLength="723968" />
+          <FileHash Type="SHA256" Data="0xB1F2BD738FEDEB2608903E07CE86175936442002992E7A2F73C876FBFCD1C5EE" SourceFileName="Uninstall.exe" SourceFileLength="17408" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="d5f50be0-f981-4a53-8eed-071f96075557" Name="Allow WinAero Tweaker installer" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0xEEB53CB151B224A30674DD276515B4694F7FE3F68ABBD1A0DEA0A8FE392A9F73" SourceFileName="WinaeroTweaker-1.65.0.0-setup.exe" SourceFileLength="6108658" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FileHashRule Id="d7af5f44-f26f-4d9d-acd6-a8aef2875d57" Name="Allow VSCodium7" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x62F8BE47F20E9B03C45194175806A3FB026894CF6C9211F812BA06CA26758DDB" SourceFileName="VSCodiumSetup-x64-1.116.02821.exe" SourceFileLength="132877792" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FilePathRule Id="39b7ed81-53e3-4e94-83a8-249d22fe6594" Name="Allow VSCodium8" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\VSCodium\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="3c8119b7-5c9d-447f-95d1-6d2358c5db1f" Name="Allow VSCodium9" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\VSCodium\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FileHashRule Id="80e8a68e-23ba-4d61-83cf-b7ea52ef3990" Name="Allow VSCodium10" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FileHashCondition>
+          <FileHash Type="SHA256" Data="0x5BE5477FD2CA4F8B646164AC630EB584105E97D14674B72BE049A667C62B9087" SourceFileName="VSCodiumUserSetup-x64-1.116.02821.exe" SourceFileLength="132878232" />
+        </FileHashCondition>
+      </Conditions>
+    </FileHashRule>
+    <FilePathRule Id="2db0b91f-1c93-4171-9ac8-41eef8c41870" Name="Allow VSCodium11" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\.vscode\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="36e61ecc-1726-4ab1-8e40-219a4fc7776c" Name="Allow VSCodium13" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\.vscode\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="2788b59a-7282-4e6a-bb9d-cb10cf7129d4" Name="Allow VSCodium12" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\.vscode-oss\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="9bc22f24-fdf5-4834-b8d2-ef00ace1617e" Name="Allow VSCodium14" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="0445f312-ebcd-4ca7-ae7d-4a0a7484bb60" Name="Allow VSCodium14" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*\*" />
+      </Conditions>
+    </FilePathRule>
   </RuleCollection>
   <RuleCollection Type="Msi" EnforcementMode="Enabled">
     <FilePublisherRule Id="5454a419-9b59-468d-a1e8-12501379e32f" Name="All digitally signed Windows Installer files" Description="Allows members of the Everyone group to run digitally signed Windows Installer files." UserOrGroupSid="S-1-1-0" Action="Allow">
@@ -796,5 +941,45 @@
         </FileHashCondition>
       </Conditions>
     </FileHashRule>
+    <FilePathRule Id="bf78c856-3c3e-4180-823a-f5b3373cb31c" Name="Allow VSCodium1" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\VSCodium\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="13e82e87-16ae-43ee-9a8a-bd832e6ee670" Name="Allow VSCodium2" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\VSCodium\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="c153a2d7-3b9a-47a6-a71a-46acb3886156" Name="Allow VSCodium3" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\.vscode\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="63925c55-afba-4718-bec0-f0a020e07d2d" Name="Allow VSCodium4" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\.vscode\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="6d077732-1aab-48a8-8a5f-bdfc06cbf8e4" Name="Allow VSCodium5" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\.vscode-oss\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="fd1d474a-abd8-47c0-a563-e755ac63fe21" Name="Allow VSCodium6" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\*\.vscode-oss\*\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="6e47352e-cabb-494d-9ab9-3fcf1aeafea8" Name="Allow VSCodium7" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="1459f2b6-b9c6-4a37-8d5c-30e07d0fb8c7" Name="Allow VSCodium8" Description="" UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="C:\Users\saril\AppData\Roaming\VSCodium\*\*" />
+      </Conditions>
+    </FilePathRule>
   </RuleCollection>
 </AppLockerPolicy>
