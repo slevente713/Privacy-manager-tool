@@ -1,7 +1,10 @@
 # Privacy-manager-tool
 This script enhances data protection using PowerShell. It includes many data protection tools and an AppLocker policy. ez a script növeli az adatvédelmet powershell segítségével. Van benne sok adatvédelmi eszköz és egy AppLocker Policy is.
 
-## Changes in AppLocker Policies: Változások az AppLocker Policies-ban: 
+## Changes in AppLocker Policies: Változások az AppLocker Policies.xml -ben: 
+
+Import this XML file Group Policy Editor\Computer Configuration\Windows Settings\Security Settings\Application Control Policies. Then open the Windows Command promt as Administrator, and type in: "gpupdate /force". It updates your Group Policy policies, and now you have AppLocker. Please create a folder in C: with the name: AppLockerExcepcions. Importáld be ezt az XML-fájlt a Csoportházirendbe (Group Policy) ide: „Számítógép konfigurációja\Windows-beállítások\Biztonsági beállítások\Alkalmazás-ellenőrzési házirendek”. Ezután nyisd meg a Windows Parancssort rendszergazdaként, és írd be a következő parancsot: „gpupdate /force”. Ezzel frissíti a csoportházirend-beállításokat, és ezzel az AppLocker már használatra kész. Hozz létre egy mappát a C: meghajtón az AppLockerExceptions névvel.
+
 *Executable rules* 
 
 Disbles PowerShell, PowerShell ISE and PowerShell 7 outside original paths and AppLockerExcepcions folder. Letiltja a PowerShell-t, PowerShell ISE-t, és a Powershell 7-et az eredeti útvonalakon, és az AppLockerExcepcions mappán kívül.
@@ -44,7 +47,7 @@ Only EV-signed applications can run, from Microsoft store. Csak az EV-aláírás
 
 
 
-## Changes in DisableAutoPlay: Változások a DisableAutoPlay -ben:
+## Changes in DisableAutoPlay.ps1: Változások a DisableAutoPlay.ps1 -ben:
 
 Disables Auto Play. Letiltja az Auto Play -t.
 
@@ -56,7 +59,7 @@ Disable Personalized ads, telementry, and sending opcional diagnostic data in Mi
 
 
 
-## Changes in DisableNetBiosAndLlmnr: Változások a DisableNetBiosAndLlmnr-ben: 
+## Changes in DisableNetBiosAndLlmnr.ps1: Változások a DisableNetBiosAndLlmnr.ps1 -ben: 
 
 Disables NetBios protocoll and LLMNR protocoll, because they're rarely used nowdays, and they are very vulnerable. Letiltja a NetBIOS és LLMNR protokolokat, mert manapság nagyon ritkán hazsnáltak és nagyon sebezhetőek.
 
@@ -64,29 +67,60 @@ Disables NetBios protocoll and LLMNR protocoll, because they're rarely used nowd
 
 
 
-## Changes in DisableRDP: Változások a DisableRDP -ben: 
+## Changes in DisableRDP.ps1: Változások a DisableRDP.ps1 -ben: 
 
 Disables Remote Dektop, and all Remote connections, even Quick Assist. Letiltja a Távoli asztalt, és az összes távoli kapcsolatot, még a Gyors Segítséget is.
 
 
 
-## Changes in DisableRecall: Változások a DisableRecall -ban: 
+## Changes in DisableRecall.ps1: Változások a DisableRecall.ps1 -ben: 
 
 Disables Recall in Copilot+ PCs. Letiltja a Recall-t, a Copilot+ gépeken.
 
-⚠️IMPORTANT NOTE: After a Windows Update (mainly feature upates), recall can be reactivate itself. FONTOS MEGJEGYZÉS: ⚠️
+⚠️IMPORTANT NOTE: After a Windows Update (mainly feature upates), recall can be reactivate itself. FONTOS MEGJEGYZÉS: Egy Windows Update futtatása után lehet hogy visszaáll (főleg a funkciófrissítésekben).⚠️
 
 
 
-## Changes in DisableSMBv1Protocol: Változások a DisableSMBv1Protocol -ban: 
+## Changes in DisableSMBv1Protocol.ps1: Változások a DisableSMBv1Protocol.ps1 -ben: 
 
 Disables SMBv1 protocol, that's WannaCry used to spread on the internet. Letiltja az SMBv1 protokollt, amit a WannaCry használt hogy terjedjen az interneten.
 
 
 
-## Changes in DisableSendingOpcionalDiagnosticDataAndAds: Változások a DisableSendingOPcionalDiagnosticDataAndAds -ben: 
+## Changes in DisableSendingOpcionalDiagnosticDataAndAds.ps1: Változások a DisableSendingOPcionalDiagnosticDataAndAds.ps1 -ben: 
 
 Disables these features in Windows: Personalized offers, Allow Websites to acces my language list, Improve start and search results, sending opcional diagnostic data, improve inking and typing. A következő funkciókat letiltja a Windows rendszerben: Személyre szabott ajánlatok, A webhelyek számára engedélyezve a nyelvlista elérését, A kezdőképernyő és a keresési eredmények javítása, opcionális diagnosztikai adatok küldése, a kézírás és a gépelés személyre szabása.
 
 
-# ⚠️THE README IS NOT FINSHED YET! A README MÉG NINCS BEFEJEZVE!⚠️
+
+## Changes in EnableCoreIsolation(VBS).ps1: Változások az EnableCoreIsolation(VBS).ps1 -ben: 
+
+Enables Core Isolation (VBS) (Virtualization Based Security) without memory integrity. Engedélyezi a Core Isolation-t (VBS) (Magelkülönítés) (Virtualization Based Security) (Virtualizáció alapú biztonság) memóriavédelem (Memority Integrity) nélkül.
+
+
+
+## Changes in EnableWindowsDefenderFirewallOnAllProfiles.ps1: Változások az EnableWindowsDefenderFirewallOnAllProfiles.ps1 -ben: 
+
+Enables Windows Defender Firewall on Public Networks, on Domain Networks, and on Private Networks. Engedélyezi a Windows Defender tűzfalat a nyilvános hálozatokon, a privát hálózatokon, és a tartományi (domain) hálózaton.
+
+Not recommended if you use a 3rd party firewall. Nem javasolt ha 3. fétől származó tűzfalat használsz.
+
+
+
+## Changes in EnableWindowsSecurityRealTimeProtection.ps1: Változások az EnableWindowsSecurityRealTimeProtection.ps1 -ben: 
+
+Enables Windows Security Real time protection. Engedélyezi a Windows Security valós idejű védelmet.
+
+
+
+## Changes in RemovePowershell2.ps1: Változások a RemovePowershell2.ps1 -ben: 
+
+Disables Powershell 2.0 with WindowsOptionalFeatures
+
+Disables Powershell 2.0 with dism /online
+
+
+
+## Changes in EnableCoreIsolationWithMemoryIntegrity(HVCI).ps1: Változások a EnableCoreIsolationWithMemoryIntegrity(HVCI).ps1 -ben: 
+
+Enables Core Isolation (VBS) (Virtualization Based Security) with memory integrity (HVCI) (Hypervisor Protected Code Integrity). Engedélyezi a Core Isolation-t (VBS) (Magelkülönítés) (Virtualization Based Security) (Virtualizáció alapú biztonság) memóriavédelemmel (Memority Integrity) (Hypervisor Protected Code Integrity).
